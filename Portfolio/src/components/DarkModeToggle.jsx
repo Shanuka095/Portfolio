@@ -21,7 +21,8 @@ export default function DarkModeToggle() {
       className="px-4 py-2 rounded-full font-semibold text-sm
                  bg-light-primary text-white hover:bg-light-accent
                  dark:bg-dark-primary dark:text-dark-background dark:hover:bg-dark-accent
-                 shadow-md hover:shadow-lg transition-all duration-300 transform hover:scale-105"
+                 shadow-md hover:shadow-lg transition-all duration-300 transform hover:scale-105
+                 focus:outline-none focus:ring-2 focus:ring-light-primary dark:focus:ring-dark-primary focus:ring-opacity-75"
     >
       {darkMode ? "Light Mode" : "Dark Mode"}
     </button>

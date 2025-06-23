@@ -9,6 +9,7 @@ export default function Home() {
       className="text-center py-16 md:py-24 lg:py-32 flex flex-col items-center justify-center min-h-screen-minus-navbar"
       data-aos="fade-up"
       data-aos-duration="1000"
+      data-aos-easing="ease-out-cubic"
     >
       <img
         src={profilePic}
@@ -47,9 +48,15 @@ export default function Home() {
         Currently, I’m focused on developing scalable, user-friendly applications and expanding my skills in full-stack development.
       </p>
 
-      {/* Optional: Call-to-action button */}
+      {/* Call-to-action button with pulse animation */}
       <div className="mt-10" data-aos="fade-up" data-aos-duration="1200" data-aos-delay="1000">
-        <Link to="contact" smooth={true} duration={800} className="inline-block bg-light-primary hover:bg-light-accent text-white font-bold py-3 px-8 rounded-full shadow-lg transform hover:scale-105 transition-all duration-300 cursor-pointer text-lg">
+        <Link
+          to="contact"
+          smooth={true}
+          duration={800}
+          className="inline-block bg-light-primary hover:bg-light-accent text-white font-bold py-3 px-8 rounded-full shadow-lg transform hover:scale-105
+                     transition-all duration-300 cursor-pointer text-lg btn-pulse" // Added btn-pulse class
+        >
           Get In Touch
         </Link>
       </div>

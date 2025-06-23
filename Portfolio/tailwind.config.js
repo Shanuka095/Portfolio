@@ -22,20 +22,20 @@ export default {
           border: '#DEE2E6',
         },
         dark: {
-          background: '#1A202C',
-          card: '#2D3748',
-          text: '#E2E8F0',
-          textSecondary: '#A0AEC0',
-          primary: '#63B3ED',
-          accent: '#4FD1C5',
-          border: '#4A5568',
+          background: '#0D1117', // Even deeper, near-black background (GitHub dark mode inspired)
+          card: '#161B22',       // Darker card background, still distinct from main background
+          text: '#C9D1D9',       // Lighter, more visible text against very dark backgrounds
+          textSecondary: '#8B949E', // Slightly lighter secondary text for better readability
+          primary: '#58A6FF',   // A slightly brighter blue to stand out more
+          accent: '#39C5BB',    // A bolder teal-green accent
+          border: '#30363D',    // Darker, more subtle borders
         },
       },
       boxShadow: {
         'custom-light': '0 10px 30px rgba(0, 0, 0, 0.08)',
-        'custom-dark': '0 10px 30px rgba(0, 0, 0, 0.3)',
+        'custom-dark': '0 10px 30px rgba(0, 0, 0, 0.5)',
         '3d-light': '5px 5px 20px rgba(0,0,0,0.15)',
-        '3d-dark': '5px 5px 20px rgba(0,0,0,0.4)',
+        '3d-dark': '5px 5px 20px rgba(0,0,0,0.6)',
       },
       keyframes: {
         'fade-in-up': {
@@ -56,9 +56,8 @@ export default {
         },
         'pulse-dark-primary': {
           '0%, 100%': { 'box-shadow': '0 0 0 0 var(--tw-colors-dark-primary)' },
-          '50%': { 'box-shadow': '0 0 0 12px rgba(99, 179, 237, 0)' },
+          '50%': { 'box-shadow': '0 0 0 12px rgba(88, 166, 255, 0)' },
         },
-        // New animation for background gradient
         'gradient-move': {
           '0%': { backgroundPosition: '0% 0%' },
           '100%': { backgroundPosition: '100% 100%' },
@@ -70,7 +69,7 @@ export default {
         'fade-in-left': 'fade-in-left 0.6s ease-out forwards',
         'pulse-light': 'pulse-primary 2s cubic-bezier(0.4, 0, 0.6, 1) infinite',
         'pulse-dark': 'pulse-dark-primary 2s cubic-bezier(0.4, 0, 0.6, 1) infinite',
-        'gradient-move': 'gradient-move 30s ease infinite alternate', // Subtle, slow movement
+        'gradient-move': 'gradient-move 30s ease infinite alternate',
       }
     },
   },

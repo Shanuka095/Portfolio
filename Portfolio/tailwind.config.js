@@ -22,13 +22,13 @@ export default {
           border: '#DEE2E6',
         },
         dark: {
-          background: '#0D1117', // Even deeper, near-black background (GitHub dark mode inspired)
-          card: '#161B22',       // Darker card background, still distinct from main background
-          text: '#C9D1D9',       // Lighter, more visible text against very dark backgrounds
-          textSecondary: '#8B949E', // Slightly lighter secondary text for better readability
-          primary: '#58A6FF',   // A slightly brighter blue to stand out more
-          accent: '#39C5BB',    // A bolder teal-green accent
-          border: '#30363D',    // Darker, more subtle borders
+          background: '#0D1117',
+          card: '#161B22',
+          text: '#C9D1D9',
+          textSecondary: '#8B949E',
+          primary: '#58A6FF',
+          accent: '#39C5BB',
+          border: '#30363D',
         },
       },
       boxShadow: {
@@ -62,6 +62,32 @@ export default {
           '0%': { backgroundPosition: '0% 0%' },
           '100%': { backgroundPosition: '100% 100%' },
         },
+        'pop-in': {
+          '0%': { transform: 'scale(0.9)', opacity: '0' },
+          '100%': { transform: 'scale(1)', opacity: '1' },
+        },
+        'name-glow': {
+          '0%, 100%': { 'text-shadow': '0 0 5px rgba(0, 123, 255, 0.5), 0 0 10px rgba(0, 123, 255, 0.2)' },
+          '50%': { 'text-shadow': '0 0 10px rgba(0, 123, 255, 0.8), 0 0 20px rgba(0, 123, 255, 0.4)' },
+        },
+        'name-glow-dark': {
+          '0%, 100%': { 'text-shadow': '0 0 5px rgba(88, 166, 255, 0.5), 0 0 10px rgba(88, 166, 255, 0.2)' },
+          '50%': { 'text-shadow': '0 0 10px rgba(88, 166, 255, 0.8), 0 0 20px rgba(88, 166, 255, 0.4)' },
+        },
+        // New keyframe for profile photo subtle pulse
+        'profile-pulse': {
+          '0%, 100%': { transform: 'scale(1)' },
+          '50%': { transform: 'scale(1.02)' }, // Very slight scale increase
+        },
+        // New keyframe for border animation (subtle color shift/pulse)
+        'border-pulse-light': {
+          '0%, 100%': { 'border-color': 'var(--tw-colors-light-primary)' },
+          '50%': { 'border-color': 'var(--tw-colors-light-accent)' },
+        },
+        'border-pulse-dark': {
+          '0%, 100%': { 'border-color': 'var(--tw-colors-dark-primary)' },
+          '50%': { 'border-color': 'var(--tw-colors-dark-accent)' },
+        }
       },
       animation: {
         'fade-in-up': 'fade-in-up 0.6s ease-out forwards',
@@ -70,6 +96,12 @@ export default {
         'pulse-light': 'pulse-primary 2s cubic-bezier(0.4, 0, 0.6, 1) infinite',
         'pulse-dark': 'pulse-dark-primary 2s cubic-bezier(0.4, 0, 0.6, 1) infinite',
         'gradient-move': 'gradient-move 30s ease infinite alternate',
+        'pop-in': 'pop-in 0.4s ease-out forwards',
+        'name-glow': 'name-glow 3s ease-in-out infinite alternate',
+        'name-glow-dark': 'name-glow-dark 3s ease-in-out infinite alternate',
+        'profile-pulse': 'profile-pulse 3s ease-in-out infinite alternate', // Applied directly to image
+        'border-pulse-light': 'border-pulse-light 4s ease-in-out infinite alternate',
+        'border-pulse-dark': 'border-pulse-dark 4s ease-in-out infinite alternate',
       }
     },
   },

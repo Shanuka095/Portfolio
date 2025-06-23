@@ -32,9 +32,9 @@ body {
 
 /* Dark mode styles, applied when 'dark' class is present on html */
 html.dark body {
-  @apply bg-dark-background text-dark-text; /* This ensures the base dark background is applied by Tailwind */
+  @apply bg-dark-background text-dark-text;
   background-image:
-    linear-gradient(135deg, var(--tw-colors-dark-background) 0%, var(--tw-colors-dark-card) 80%); /* Ensure variables match dark theme */
+    linear-gradient(135deg, var(--tw-colors-dark-background) 0%, var(--tw-colors-dark-card) 80%);
   background-size: 200% 200%;
   animation: gradient-move 30s ease infinite alternate;
   background-attachment: fixed;
@@ -74,7 +74,7 @@ html.dark ::-webkit-scrollbar-thumb:hover {
 }
 
 .min-h-screen-minus-navbar {
-  min-height: calc(100vh - 80px);
+  min-height: calc(100vh - 80px); /* Adjust 80px based on your Navbar's actual height */
 }
 
 /* Custom class for section headings with enhanced hover effect */
@@ -123,4 +123,22 @@ html.dark .btn-pulse::before {
 }
 html.dark .card-depth-hover:hover {
   @apply shadow-xl;
+}
+
+/* Class for continuously animated name */
+.animated-name {
+  @apply animate-name-glow;
+}
+
+html.dark .animated-name {
+  @apply animate-name-glow-dark;
+}
+
+/* New: Class for animated profile photo border */
+.profile-border-animated {
+  animation: border-pulse-light 4s ease-in-out infinite alternate;
+}
+
+html.dark .profile-border-animated {
+  animation: border-pulse-dark 4s ease-in-out infinite alternate;
 }

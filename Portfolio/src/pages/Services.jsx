@@ -1,5 +1,6 @@
 import React from 'react';
 import { FaCode, FaCogs, FaMobile, FaPencilRuler } from 'react-icons/fa';
+import Tilt from 'react-parallax-tilt';
 
 const servicesList = [
   {
@@ -30,19 +31,30 @@ export default function Services() {
       <h2 className="section-heading text-light-text dark:text-dark-text">Services I Offer</h2>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-2 gap-8">
         {servicesList.map((service, idx) => (
-          <div
+          <Tilt
             key={idx}
-            className="bg-light-card dark:bg-dark-card p-8 rounded-xl shadow-custom-light dark:shadow-custom-dark hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 border border-light-border dark:border-dark-border flex flex-col items-center text-center
-                       group" // Added group for text color change on hover
+            className="rounded-xl shadow-3d-light dark:shadow-3d-dark transition-shadow duration-300 transform hover:scale-[1.02]"
+            tiltMaxAngleX={8}
+            tiltMaxAngleY={8}
+            perspective={800}
+            transitionEasing="cubic-bezier(.03,.98,.52,.99)"
+            transitionDuration={600}
+            scale={1.01}
+            gyroscope={true}
             data-aos="zoom-in-up"
             data-aos-delay={idx * 150}
           >
-            <service.icon className="text-light-primary dark:text-dark-primary text-6xl mb-6 transform group-hover:scale-110 transition-transform duration-300" />
-            <h3 className="text-2xl font-semibold mb-3 text-light-text dark:text-dark-text group-hover:text-light-primary dark:group-hover:text-dark-primary transition-colors duration-300">{service.title}</h3>
-            <p className="text-light-textSecondary dark:text-dark-textSecondary leading-relaxed">
-              {service.description}
-            </p>
-          </div>
+            <div
+              className="bg-light-card dark:bg-dark-card p-8 rounded-xl border border-light-border dark:border-dark-border flex flex-col items-center text-center
+                         group h-full"
+            >
+              <service.icon className="text-light-primary dark:text-dark-primary text-6xl mb-6 transform group-hover:scale-110 transition-transform duration-300" />
+              <h3 className="text-2xl font-semibold mb-3 text-light-text dark:text-dark-text group-hover:text-light-primary dark:group-hover:text-dark-primary transition-colors duration-300">{service.title}</h3>
+              <p className="text-light-textSecondary dark:text-dark-textSecondary leading-relaxed">
+                {service.description}
+              </p>
+            </div>
+          </Tilt>
         ))}
       </div>
     </section>

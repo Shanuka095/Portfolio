@@ -67,7 +67,7 @@ export default function About() {
                     key={skillIdx}
                     className="px-3 py-1 bg-light-primary/10 dark:bg-dark-primary/10 text-light-text dark:text-dark-text
                                rounded-full text-xs font-mono border border-light-primary/30 dark:border-dark-primary/30
-                               hover:bg-light-primary/20 dark:hover:bg-dark-primary/20 transition-colors duration-200"
+                               hover:bg-light-primary/20 dark:hover:bg-dark-primary/20 transition-colors duration-200 cursor-default select-none"
                   >
                     {skill}
                   </span>

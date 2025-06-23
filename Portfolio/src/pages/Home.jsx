@@ -1,6 +1,8 @@
 import React from 'react';
-import profilePic from '../assets/profile.jpg';
+import profilePic from '../assets/ShanukaProfile.png';
+import myCV from '../assets/Shanuka_Induran_CV.pdf';
 import { Link } from 'react-scroll';
+import { FaGithub, FaLinkedin, FaFacebook, FaInstagram, FaDownload } from 'react-icons/fa';
 
 export default function Home() {
   return (
@@ -18,24 +20,21 @@ export default function Home() {
       <img
         src={profilePic}
         alt="Shanuka Induran"
-        className="mx-auto rounded-full w-48 h-48 object-cover mb-8 shadow-xl border-4 border-light-primary dark:border-dark-primary transition-colors duration-500 transform hover:scale-105 relative z-10"
-        data-aos="zoom-in"
-        data-aos-duration="1200"
-        data-aos-easing="ease-out-back"
+        className="mx-auto rounded-full w-48 h-48 object-cover mb-8 shadow-xl border-4 border-light-primary dark:border-dark-primary
+                   transition-colors duration-500 transform hover:scale-105 relative z-10
+                   animated-profile-photo profile-border-animated" // Added both classes
+        // Removed data-aos="zoom-in" from here, as the continuous animation overrides it
       />
 
       <h1
-        className="text-5xl md:text-6xl lg:text-7xl font-extrabold mb-4 leading-tight text-light-text dark:text-dark-text text-shadow-lg relative z-10"
-        data-aos="fade-right"
-        data-aos-duration="1200"
-        data-aos-delay="300"
+        className="text-5xl md:text-6xl lg:text-7xl font-extrabold mb-4 leading-tight text-light-text dark:text-dark-text text-shadow-lg relative z-10 animated-name"
       >
         Shanuka Induran
       </h1>
 
       <p
         className="text-xl md:text-2xl lg:text-3xl max-w-3xl mx-auto leading-relaxed text-light-textSecondary dark:text-dark-textSecondary relative z-10"
-        data-aos="fade-left"
+        data-aos="fade-up"
         data-aos-duration="1200"
         data-aos-delay="600"
       >
@@ -45,15 +44,39 @@ export default function Home() {
       </p>
       <p
         className="text-xl md:text-2xl lg:text-3xl max-w-3xl mx-auto leading-relaxed text-light-textSecondary dark:text-dark-textSecondary mt-2 relative z-10"
-        data-aos="fade-left"
+        data-aos="fade-up"
         data-aos-duration="1200"
         data-aos-delay="800"
       >
         Currently, I’m focused on developing scalable, user-friendly applications and expanding my skills in full-stack development.
       </p>
 
-      {/* Call-to-action button with pulse animation */}
-      <div className="mt-10 relative z-10" data-aos="fade-up" data-aos-duration="1200" data-aos-delay="1000">
+      {/* Social Media Icons */}
+      <div className="flex justify-center space-x-6 mt-8 relative z-10" data-aos="fade-up" data-aos-delay="1200">
+        <a href="https://github.com/Shanuka095" target="_blank" rel="noopener noreferrer"
+           className="text-light-textSecondary dark:text-dark-textSecondary hover:text-light-primary dark:hover:text-dark-primary
+                      transform hover:scale-125 transition-all duration-300 text-3xl" aria-label="GitHub">
+          <FaGithub />
+        </a>
+        <a href="https://www.linkedin.com/in/shanuka-induran" target="_blank" rel="noopener noreferrer"
+           className="text-light-textSecondary dark:text-dark-textSecondary hover:text-light-primary dark:hover:text-dark-primary
+                      transform hover:scale-125 transition-all duration-300 text-3xl" aria-label="LinkedIn">
+          <FaLinkedin />
+        </a>
+        <a href="https://web.facebook.com/shanuka.induran" target="_blank" rel="noopener noreferrer"
+           className="text-light-textSecondary dark:text-dark-textSecondary hover:text-light-primary dark:hover:text-dark-primary
+                      transform hover:scale-125 transition-all duration-300 text-3xl" aria-label="Facebook">
+          <FaFacebook />
+        </a>
+        <a href="https://www.instagram.com/_shanuka_40/" target="_blank" rel="noopener noreferrer"
+           className="text-light-textSecondary dark:text-dark-textSecondary hover:text-light-primary dark:hover:text-dark-primary
+                      transform hover:scale-125 transition-all duration-300 text-3xl" aria-label="Instagram">
+          <FaInstagram />
+        </a>
+      </div>
+
+      {/* Call-to-action & CV Download Buttons */}
+      <div className="flex flex-col sm:flex-row justify-center space-y-4 sm:space-y-0 sm:space-x-6 mt-10 relative z-10" data-aos="fade-up" data-aos-duration="1200" data-aos-delay="1400">
         <Link
           to="contact"
           smooth={true}
@@ -63,6 +86,16 @@ export default function Home() {
         >
           Get In Touch
         </Link>
+        <a
+          href={myCV}
+          download="Shanuka_Induran_CV.pdf"
+          className="inline-flex items-center justify-center bg-transparent border-2 border-light-primary dark:border-dark-primary text-light-primary dark:text-dark-primary
+                     font-bold py-3 px-8 rounded-full shadow-lg transform hover:scale-105 transition-all duration-300 cursor-pointer text-lg
+                     hover:bg-light-primary hover:text-white dark:hover:bg-dark-primary dark:hover:text-dark-background"
+          data-aos="zoom-in" data-aos-delay="1600"
+        >
+          Download CV <FaDownload className="ml-3" />
+        </a>
       </div>
     </section>
   );

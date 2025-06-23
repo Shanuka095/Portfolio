@@ -1,45 +1,51 @@
 import React from 'react';
-import { FaEnvelope, FaPhoneAlt, FaLinkedin, FaGithub } from 'react-icons/fa'; // Import icons
+import { FaEnvelope, FaPhoneAlt, FaLinkedin, FaGithub } from 'react-icons/fa';
 
 export default function Contact() {
   return (
-    <section id="contact" className="max-w-4xl mx-auto mb-20 py-16 md:py-24 px-4" data-aos="fade-up">
+    <section id="contact" className="max-w-4xl mx-auto mb-20 py-16 md:py-24 px-4" data-aos="fade-up" data-aos-easing="ease-out-cubic">
       <h2 className="section-heading text-light-text dark:text-dark-text">Contact Me</h2>
-      <div className="bg-light-card dark:bg-dark-card p-8 rounded-xl shadow-xl transition-colors duration-500 border border-light-border dark:border-dark-border grid grid-cols-1 md:grid-cols-2 gap-8">
+      <div className="bg-light-card dark:bg-dark-card p-8 rounded-xl shadow-custom-light dark:shadow-custom-dark transition-colors duration-500 border border-light-border dark:border-dark-border grid grid-cols-1 md:grid-cols-2 gap-8">
 
         {/* Contact Info Section */}
         <div data-aos="fade-right" data-aos-delay="100">
           <h3 className="text-2xl font-semibold mb-4 text-light-text dark:text-dark-text">Reach Out Directly</h3>
-          <ul className="space-y-4 text-light-textSecondary dark:text-dark-textSecondary text-lg">
+          <ul className="space-y-5 text-light-textSecondary dark:text-dark-textSecondary text-lg">
             <li className="flex items-center">
-              <FaEnvelope className="text-light-primary dark:text-dark-primary mr-3 text-2xl" />
-              Email:{' '}
-              <a
-                href="mailto:shanukainduran@gmail.com"
-                className="ml-2 text-light-primary dark:text-dark-primary hover:underline transition-colors duration-200"
-              >
-                shanukainduran@gmail.com
-              </a>
+              <FaEnvelope className="text-light-primary dark:text-dark-primary mr-3 text-2xl flex-shrink-0" />
+              <div className="flex flex-col sm:flex-row sm:items-center">
+                Email:
+                <a
+                  href="mailto:shanukainduran@gmail.com"
+                  className="ml-0 sm:ml-2 text-light-primary dark:text-dark-primary hover:underline transition-colors duration-200"
+                >
+                  shanukainduran@gmail.com
+                </a>
+              </div>
             </li>
             <li className="flex items-center">
-              <FaPhoneAlt className="text-light-primary dark:text-dark-primary mr-3 text-2xl" />
-              Phone:{' '}
-              <a
-                href="tel:+94725033327"
-                className="ml-2 text-light-primary dark:text-dark-primary hover:underline transition-colors duration-200"
-              >
-                +94 72 503 3327
-              </a>
-              ,{' '}
-              <a
-                href="tel:+94771237825"
-                className="text-light-primary dark:text-dark-primary hover:underline transition-colors duration-200"
-              >
-                +94 77 123 7825
-              </a>
+              <FaPhoneAlt className="text-light-primary dark:text-dark-primary mr-3 text-2xl flex-shrink-0" />
+              <div className="flex flex-col sm:flex-row sm:items-center">
+                Phone:
+                <div className="ml-0 sm:ml-2">
+                  <a
+                    href="tel:+94725033327"
+                    className="text-light-primary dark:text-dark-primary hover:underline transition-colors duration-200"
+                  >
+                    +94 72 503 3327
+                  </a>
+                  ,{' '}
+                  <a
+                    href="tel:+94771237825"
+                    className="text-light-primary dark:text-dark-primary hover:underline transition-colors duration-200"
+                  >
+                    +94 77 123 7825
+                  </a>
+                </div>
+              </div>
             </li>
             <li className="flex items-center">
-              <FaLinkedin className="text-light-primary dark:text-dark-primary mr-3 text-2xl" />
+              <FaLinkedin className="text-light-primary dark:text-dark-primary mr-3 text-2xl flex-shrink-0" />
               LinkedIn:{' '}
               <a
                 href="https://linkedin.com/in/shanuka-induran"
@@ -51,7 +57,7 @@ export default function Contact() {
               </a>
             </li>
             <li className="flex items-center">
-              <FaGithub className="text-light-primary dark:text-dark-primary mr-3 text-2xl" />
+              <FaGithub className="text-light-primary dark:text-dark-primary mr-3 text-2xl flex-shrink-0" />
               GitHub:{' '}
               <a
                 href="https://github.com/Shanuka095"
@@ -78,7 +84,9 @@ export default function Contact() {
                 type="text"
                 id="name"
                 placeholder="Your Name"
-                className="w-full p-3 rounded-md bg-light-background dark:bg-dark-background border border-light-border dark:border-dark-border focus:ring-2 focus:ring-light-primary dark:focus:ring-dark-primary outline-none transition-all duration-200 text-light-text dark:text-dark-text"
+                className="w-full p-3 rounded-md bg-light-background dark:bg-dark-background border border-light-border dark:border-dark-border
+                           focus:ring-2 focus:ring-light-primary dark:focus:ring-dark-primary outline-none transition-all duration-200
+                           text-light-text dark:text-dark-text placeholder-light-textSecondary/70 dark:placeholder-dark-textSecondary/70"
               />
             </div>
             <div>
@@ -87,7 +95,9 @@ export default function Contact() {
                 type="email"
                 id="email"
                 placeholder="Your Email"
-                className="w-full p-3 rounded-md bg-light-background dark:bg-dark-background border border-light-border dark:border-dark-border focus:ring-2 focus:ring-light-primary dark:focus:ring-dark-primary outline-none transition-all duration-200 text-light-text dark:text-dark-text"
+                className="w-full p-3 rounded-md bg-light-background dark:bg-dark-background border border-light-border dark:border-dark-border
+                           focus:ring-2 focus:ring-light-primary dark:focus:ring-dark-primary outline-none transition-all duration-200
+                           text-light-text dark:text-dark-text placeholder-light-textSecondary/70 dark:placeholder-dark-textSecondary/70"
               />
             </div>
             <div>
@@ -96,12 +106,16 @@ export default function Contact() {
                 id="message"
                 rows="5"
                 placeholder="Your Message"
-                className="w-full p-3 rounded-md bg-light-background dark:bg-dark-background border border-light-border dark:border-dark-border focus:ring-2 focus:ring-light-primary dark:focus:ring-dark-primary outline-none transition-all duration-200 text-light-text dark:text-dark-text"
+                className="w-full p-3 rounded-md bg-light-background dark:bg-dark-background border border-light-border dark:border-dark-border
+                           focus:ring-2 focus:ring-light-primary dark:focus:ring-dark-primary outline-none transition-all duration-200
+                           text-light-text dark:text-dark-text placeholder-light-textSecondary/70 dark:placeholder-dark-textSecondary/70 resize-y"
               ></textarea>
             </div>
             <button
               type="submit"
-              className="w-full py-3 px-6 bg-light-primary hover:bg-light-accent text-white font-bold rounded-md shadow-md hover:shadow-lg transition-all duration-300 transform hover:scale-105"
+              className="w-full py-3 px-6 bg-light-primary hover:bg-light-accent text-white font-bold rounded-md shadow-md hover:shadow-lg
+                         transition-all duration-300 transform hover:scale-105
+                         focus:outline-none focus:ring-2 focus:ring-light-primary dark:focus:ring-dark-primary focus:ring-opacity-75"
             >
               Send Message
             </button>

@@ -14,6 +14,7 @@ function App() {
     AOS.init({
       duration: 1000,
       once: true,
+      easing: 'ease-out-cubic', // Global easing for AOS animations
     });
   }, []);
 

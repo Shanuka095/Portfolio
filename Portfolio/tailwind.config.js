@@ -74,12 +74,10 @@ export default {
           '0%, 100%': { 'text-shadow': '0 0 5px rgba(88, 166, 255, 0.5), 0 0 10px rgba(88, 166, 255, 0.2)' },
           '50%': { 'text-shadow': '0 0 10px rgba(88, 166, 255, 0.8), 0 0 20px rgba(88, 166, 255, 0.4)' },
         },
-        // New keyframe for profile photo subtle pulse
         'profile-pulse': {
           '0%, 100%': { transform: 'scale(1)' },
-          '50%': { transform: 'scale(1.02)' }, // Very slight scale increase
+          '50%': { transform: 'scale(1.02)' },
         },
-        // New keyframe for border animation (subtle color shift/pulse)
         'border-pulse-light': {
           '0%, 100%': { 'border-color': 'var(--tw-colors-light-primary)' },
           '50%': { 'border-color': 'var(--tw-colors-light-accent)' },
@@ -87,6 +85,15 @@ export default {
         'border-pulse-dark': {
           '0%, 100%': { 'border-color': 'var(--tw-colors-dark-primary)' },
           '50%': { 'border-color': 'var(--tw-colors-dark-accent)' },
+        },
+        // New keyframe for mobile menu slide-in
+        'slide-in-top': {
+          '0%': { opacity: '0', transform: 'translateY(-100%)' },
+          '100%': { opacity: '1', transform: 'translateY(0)' },
+        },
+        'slide-out-top': {
+          '0%': { opacity: '1', transform: 'translateY(0)' },
+          '100%': { opacity: '0', transform: 'translateY(-100%)' },
         }
       },
       animation: {
@@ -99,9 +106,11 @@ export default {
         'pop-in': 'pop-in 0.4s ease-out forwards',
         'name-glow': 'name-glow 3s ease-in-out infinite alternate',
         'name-glow-dark': 'name-glow-dark 3s ease-in-out infinite alternate',
-        'profile-pulse': 'profile-pulse 3s ease-in-out infinite alternate', // Applied directly to image
+        'profile-pulse': 'profile-pulse 3s ease-in-out infinite alternate',
         'border-pulse-light': 'border-pulse-light 4s ease-in-out infinite alternate',
         'border-pulse-dark': 'border-pulse-dark 4s ease-in-out infinite alternate',
+        'slide-in-top': 'slide-in-top 0.4s ease-out forwards', // Apply to mobile menu
+        'slide-out-top': 'slide-out-top 0.4s ease-out forwards', // Apply to mobile menu
       }
     },
   },

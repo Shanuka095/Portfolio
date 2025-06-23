@@ -6,7 +6,7 @@ const projects = [
     name: "WorldFacts",
     description:
       "A modern, responsive web app that lets users explore detailed info about countries worldwide. Built with React.js and React-Leaflet, featuring secure authentication, advanced search, interactive maps, favorites, and theme toggling.",
-    image: '', // KEEP THIS EMPTY OR PUT YOUR OWN IMAGE PATH HERE
+    image: '',
     liveLink: "#",
     githubLink: "https://github.com/Shanuka095/WorldFacts",
   },

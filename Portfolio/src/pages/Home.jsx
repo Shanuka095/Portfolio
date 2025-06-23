@@ -1,12 +1,12 @@
 import React from 'react';
 import profilePic from '../assets/profile.jpg';
-import { Link } from 'react-scroll'; // Make sure this import is present!
+import { Link } from 'react-scroll';
 
 export default function Home() {
   return (
     <section
       id="home"
-      className="text-center py-16 md:py-24 lg:py-32 flex flex-col items-center justify-center min-h-screen-minus-navbar" // Added min-h-screen-minus-navbar
+      className="text-center py-16 md:py-24 lg:py-32 flex flex-col items-center justify-center min-h-screen-minus-navbar"
       data-aos="fade-up"
       data-aos-duration="1000"
     >

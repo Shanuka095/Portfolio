@@ -6,29 +6,43 @@
 
 html {
   scroll-behavior: smooth;
-  /* Optional: Smooth font rendering */
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-rendering: optimizeLegibility;
 }
 
+/* Custom text selection colors */
+::selection {
+  @apply bg-light-primary text-white;
+}
+
+html.dark ::selection {
+  @apply bg-dark-primary text-dark-background;
+}
+
+
 /* Base styles for light mode */
 body {
   @apply bg-light-background text-light-text font-sans;
-  /* Subtle background pattern/gradient for depth */
-  background-image: radial-gradient(circle at top left, var(--tw-colors-light-border) 1px, transparent 0),
-                    radial-gradient(circle at bottom right, var(--tw-colors-light-border) 1px, transparent 0);
-  background-size: 40px 40px;
-  background-position: 0 0, 20px 20px;
+  background-image:
+    radial-gradient(circle at 10% 20%, var(--tw-colors-light-border) 1px, transparent 0),
+    radial-gradient(circle at 90% 80%, var(--tw-colors-light-border) 1px, transparent 0),
+    radial-gradient(circle at 50% 50%, var(--tw-colors-light-border) 1px, transparent 0);
+  background-size: 30px 30px; /* Slightly smaller dots */
+  background-position: 0 0, 15px 15px, 7.5px 7.5px; /* Staggered positions for more density */
+  background-attachment: fixed; /* Keep pattern fixed while scrolling */
 }
 
 /* Dark mode styles, applied when 'dark' class is present on html */
 html.dark body {
   @apply bg-dark-background text-dark-text;
-  background-image: radial-gradient(circle at top left, var(--tw-colors-dark-border) 1px, transparent 0),
-                    radial-gradient(circle at bottom right, var(--tw-colors-dark-border) 1px, transparent 0);
-  background-size: 40px 40px;
-  background-position: 0 0, 20px 20px;
+  background-image:
+    radial-gradient(circle at 10% 20%, var(--tw-colors-dark-border) 1px, transparent 0),
+    radial-gradient(circle at 90% 80%, var(--tw-colors-dark-border) 1px, transparent 0),
+    radial-gradient(circle at 50% 50%, var(--tw-colors-dark-border) 1px, transparent 0);
+  background-size: 30px 30px;
+  background-position: 0 0, 15px 15px, 7.5px 7.5px;
+  background-attachment: fixed;
 }
 
 /* Custom scrollbar for a professional touch */
@@ -64,12 +78,12 @@ html.dark ::-webkit-scrollbar-thumb:hover {
 }
 
 .min-h-screen-minus-navbar {
-  min-height: calc(100vh - 80px); /* Adjust 80px based on your Navbar's actual height */
+  min-height: calc(100vh - 80px);
 }
 
-/* Custom class for section headings */
+/* Custom class for section headings with enhanced hover effect */
 .section-heading {
-  @apply text-4xl md:text-5xl font-bold mb-8 text-center relative;
+  @apply text-4xl md:text-5xl font-bold mb-8 text-center relative cursor-default select-none; /* Added cursor and select-none */
 }
 
 .section-heading::after {
@@ -77,14 +91,27 @@ html.dark ::-webkit-scrollbar-thumb:hover {
   @apply block w-24 h-1.5 mx-auto mt-4 rounded-full;
   @apply bg-light-primary dark:bg-dark-primary;
   transform: scaleX(0);
-  transition: transform 0.3s ease-out;
+  transition: transform 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94); /* Smoother transition */
 }
 
 .section-heading:hover::after {
   transform: scaleX(1);
 }
 
-/* Apply fade-in animation to main sections */
-main > section {
-  @apply opacity-0 animate-fade-in-up; /* AOS will override or work with this */
+/* Class for the pulsating button */
+.btn-pulse {
+  @apply relative; /* Needed for pseudo-element or box-shadow animation */
+}
+
+.btn-pulse::before {
+  content: '';
+  @apply absolute inset-0 rounded-full opacity-75;
+  background-color: var(--tw-colors-light-primary);
+  animation: pulse-light 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+  z-index: -1; /* Behind the button content */
+}
+
+html.dark .btn-pulse::before {
+  background-color: var(--tw-colors-dark-primary);
+  animation: pulse-dark 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
 }

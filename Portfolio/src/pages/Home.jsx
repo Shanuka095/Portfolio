@@ -22,8 +22,7 @@ export default function Home() {
         alt="Shanuka Induran"
         className="mx-auto rounded-full w-48 h-48 object-cover mb-8 shadow-xl border-4 border-light-primary dark:border-dark-primary
                    transition-colors duration-500 transform hover:scale-105 relative z-10
-                   animated-profile-photo profile-border-animated" // Added both classes
-        // Removed data-aos="zoom-in" from here, as the continuous animation overrides it
+                   animated-profile-photo profile-border-animated"
       />
 
       <h1

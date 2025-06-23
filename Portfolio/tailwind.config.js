@@ -34,6 +34,8 @@ export default {
       boxShadow: {
         'custom-light': '0 10px 30px rgba(0, 0, 0, 0.08)',
         'custom-dark': '0 10px 30px rgba(0, 0, 0, 0.3)',
+        '3d-light': '5px 5px 20px rgba(0,0,0,0.15)',
+        '3d-dark': '5px 5px 20px rgba(0,0,0,0.4)',
       },
       keyframes: {
         'fade-in-up': {
@@ -55,7 +57,12 @@ export default {
         'pulse-dark-primary': {
           '0%, 100%': { 'box-shadow': '0 0 0 0 var(--tw-colors-dark-primary)' },
           '50%': { 'box-shadow': '0 0 0 12px rgba(99, 179, 237, 0)' },
-        }
+        },
+        // New animation for background gradient
+        'gradient-move': {
+          '0%': { backgroundPosition: '0% 0%' },
+          '100%': { backgroundPosition: '100% 100%' },
+        },
       },
       animation: {
         'fade-in-up': 'fade-in-up 0.6s ease-out forwards',
@@ -63,6 +70,7 @@ export default {
         'fade-in-left': 'fade-in-left 0.6s ease-out forwards',
         'pulse-light': 'pulse-primary 2s cubic-bezier(0.4, 0, 0.6, 1) infinite',
         'pulse-dark': 'pulse-dark-primary 2s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+        'gradient-move': 'gradient-move 30s ease infinite alternate', // Subtle, slow movement
       }
     },
   },

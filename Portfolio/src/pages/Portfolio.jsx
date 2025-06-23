@@ -48,23 +48,25 @@ const projects = [
 
 export default function Portfolio() {
   return (
-    <section id="portfolio" className="max-w-6xl mx-auto py-16 md:py-24 px-4">
+    <section id="portfolio" className="max-w-6xl mx-auto py-16 md:py-24 px-4" data-aos="fade-up" data-aos-easing="ease-out-cubic">
       <h2 className="section-heading text-light-text dark:text-dark-text">My Portfolio</h2>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
         {projects.map((project, idx) => (
           <div
             key={idx}
-            className="bg-light-card dark:bg-dark-card rounded-xl shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 border border-light-border dark:border-dark-border overflow-hidden flex flex-col"
+            className="bg-light-card dark:bg-dark-card rounded-xl shadow-custom-light dark:shadow-custom-dark hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 border border-light-border dark:border-dark-border overflow-hidden flex flex-col group"
             data-aos="fade-up"
             data-aos-delay={idx * 100}
             data-aos-easing="ease-out-back"
           >
             {project.image && (
-              <img
-                src={project.image}
-                alt={project.name}
-                className="w-full h-52 object-cover" // Removed rounded-t-xl here as container handles it
-              />
+              <div className="overflow-hidden"> {/* For image hover effect */}
+                <img
+                  src={project.image}
+                  alt={project.name}
+                  className="w-full h-52 object-cover transition-transform duration-500 ease-in-out group-hover:scale-110"
+                />
+              </div>
             )}
             <div className="p-6 flex flex-col flex-grow">
               <h3 className="text-2xl font-semibold mb-3 text-light-primary dark:text-dark-primary">{project.name}</h3>
@@ -77,7 +79,7 @@ export default function Portfolio() {
                     href={project.liveLink}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="inline-flex items-center px-4 py-2 bg-light-accent hover:bg-light-primary text-white rounded-lg text-sm font-medium transition-colors duration-200 shadow-md hover:shadow-lg"
+                    className="inline-flex items-center px-4 py-2 bg-light-accent hover:bg-light-primary text-white rounded-lg text-sm font-medium transition-colors duration-200 shadow-md hover:shadow-lg transform hover:scale-105"
                   >
                     Live Demo
                     <svg className="ml-2 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4m-4-4l5-5m0 0h-7m7 0v7"></path></svg>
@@ -88,7 +90,7 @@ export default function Portfolio() {
                     href={project.githubLink}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="inline-flex items-center px-4 py-2 border border-light-primary dark:border-dark-primary text-light-primary dark:text-dark-primary hover:bg-light-primary hover:text-white dark:hover:bg-dark-primary dark:hover:text-dark-background rounded-lg text-sm font-medium transition-colors duration-200 shadow-md hover:shadow-lg"
+                    className="inline-flex items-center px-4 py-2 border border-light-primary dark:border-dark-primary text-light-primary dark:text-dark-primary hover:bg-light-primary hover:text-white dark:hover:bg-dark-primary dark:hover:text-dark-background rounded-lg text-sm font-medium transition-colors duration-200 shadow-md hover:shadow-lg transform hover:scale-105"
                   >
                     GitHub
                     <svg className="ml-2 w-4 h-4" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path fillRule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.417 2.865 8.163 6.839 9.504.471.085.678-.205.678-.456 0-.223-.009-.817-.014-1.604-2.775.602-3.362-1.353-3.362-1.353-.45-.892-1.09-1.129-1.09-1.129-.877-.594.066-.583.066-.583.97.067 1.482.997 1.482.997.863 1.484 2.274 1.057 2.822.809.087-.63.337-1.057.612-1.298-2.155-.231-4.416-1.082-4.416-4.832 0-1.066.381-1.936 1.002-2.614-.1-.232-.435-1.235.097-2.571 0 0 .817-.261 2.673 1.001A9.702 9.702 0 0112 5.025c.85.006 1.701.114 2.502.336 1.854-1.262 2.67-.999 2.67-.999.532 1.336.196 2.339.097 2.571.621.678 1.002 1.548 1.002 2.614 0 3.758-2.261 4.597-4.425 4.829.349.3.662.883.662 1.776 0 1.288-.011 2.327-.011 2.646 0 .252.207.545.684.455C21.144 20.17 24 16.424 24 12.017 24 6.484 19.522 2 14 2h-2z" clipRule="evenodd"></path></svg>

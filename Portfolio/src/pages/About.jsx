@@ -57,7 +57,7 @@ export default function About() {
               className="p-5 rounded-lg bg-light-background dark:bg-dark-background border border-light-border dark:border-dark-border shadow-md flex flex-col items-center text-center
                          transform hover:scale-[1.02] hover:shadow-lg transition-all duration-300"
               data-aos="zoom-in"
-              data-aos-delay={500 + (catIdx * 100)}
+              data-aos-delay={400 + (catIdx * 100)}
             >
               <category.icon className="text-light-accent dark:text-dark-accent text-5xl mb-4" />
               <h4 className="font-semibold text-light-primary dark:text-dark-primary mb-3 text-xl">{category.title}</h4>

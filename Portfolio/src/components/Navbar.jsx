@@ -27,7 +27,7 @@ export default function Navbar() {
 
   const linkClasses = `
     hover:text-light-primary dark:hover:text-dark-primary transition-colors duration-200
-    cursor-pointer font-medium
+    cursor-pointer font-medium relative group
   `;
 
   return (
@@ -39,11 +39,26 @@ export default function Navbar() {
         <Link to="home" smooth={true} duration={500}>Shanuka Induran</Link>
       </div>
       <div className="space-x-6 flex items-center text-light-textSecondary dark:text-dark-textSecondary">
-        <Link to="home" smooth={true} duration={500} className={linkClasses}>Home</Link>
-        <Link to="about" smooth={true} duration={500} className={linkClasses}>About</Link>
-        <Link to="portfolio" smooth={true} duration={500} className={linkClasses}>Portfolio</Link>
-        <Link to="services" smooth={true} duration={500} className={linkClasses}>Services</Link>
-        <Link to="contact" smooth={true} duration={500} className={linkClasses}>Contact</Link>
+        <Link to="home" smooth={true} duration={500} className={linkClasses}>
+            Home
+            <span className="absolute bottom-0 left-0 w-full h-0.5 bg-light-primary dark:bg-dark-primary scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left"></span>
+        </Link>
+        <Link to="about" smooth={true} duration={500} className={linkClasses}>
+            About
+            <span className="absolute bottom-0 left-0 w-full h-0.5 bg-light-primary dark:bg-dark-primary scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left"></span>
+        </Link>
+        <Link to="portfolio" smooth={true} duration={500} className={linkClasses}>
+            Portfolio
+            <span className="absolute bottom-0 left-0 w-full h-0.5 bg-light-primary dark:bg-dark-primary scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left"></span>
+        </Link>
+        <Link to="services" smooth={true} duration={500} className={linkClasses}>
+            Services
+            <span className="absolute bottom-0 left-0 w-full h-0.5 bg-light-primary dark:bg-dark-primary scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left"></span>
+        </Link>
+        <Link to="contact" smooth={true} duration={500} className={linkClasses}>
+            Contact
+            <span className="absolute bottom-0 left-0 w-full h-0.5 bg-light-primary dark:bg-dark-primary scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left"></span>
+        </Link>
         <DarkModeToggle />
       </div>
     </nav>

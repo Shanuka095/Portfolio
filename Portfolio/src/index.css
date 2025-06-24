@@ -146,19 +146,31 @@ html.dark .profile-border-animated {
 
 /* Typing effect specific styles */
 .typing-container {
+  /* Hide the overflow for typing effect */
   white-space: nowrap;
   overflow: hidden;
-  border-right: 3px solid; /* Initial caret */
-  font-family: 'Roboto Mono', monospace; /* Monospace font for typing */
-  @apply border-light-primary dark:border-dark-primary; /* Caret color */
+  display: inline-block; /* Essential for text container to respect width */
+  vertical-align: middle; /* Align with other text if needed */
+  position: relative;
 }
 
-.typing-animation {
-  animation: typing var(--typing-duration) steps(var(--steps)) forwards,
-             blink-caret 0.75s step-end infinite;
+/* Caret for typing effect */
+.typing-container::after {
+  content: '|'; /* Caret character */
+  margin-left: 2px;
+  animation: blink-caret 0.75s step-end infinite;
+  @apply font-mono; /* Ensure caret is monospace */
+  @apply text-light-primary dark:text-dark-primary; /* Caret color */
 }
 
-html.dark .typing-animation {
-  animation: typing var(--typing-duration) steps(var(--steps)) forwards,
-             blink-caret-dark 0.75s step-end infinite;
+html.dark .typing-container::after {
+  animation: blink-caret-dark 0.75s step-end infinite;
+}
+
+/* Actual typing animation */
+.typing-text {
+  display: inline-block;
+  overflow: hidden; /* Hide overflowing text */
+  white-space: nowrap; /* Prevent text from wrapping */
+  /* Animation properties controlled by JS via style attribute */
 }

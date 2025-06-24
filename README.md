@@ -101,6 +101,7 @@ Portfolio/
 ├── tailwind.config.js        # Tailwind customization
 ├── vite.config.js            # Vite build configuration
 └── package.json              # Project dependencies and scripts
+```
 
 🔗 Live Site
 Check out the live hosted version on Vercel:

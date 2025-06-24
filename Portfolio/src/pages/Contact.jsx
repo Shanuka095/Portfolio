@@ -45,7 +45,7 @@ export default function Contact() {
       <img
         src={ShanukaCover3}
         alt="Contact Background"
-        className="absolute inset-0 w-full h-full object-cover opacity-5 md:opacity-10 pointer-events-none -z-10" // Adjust opacity and z-index
+        className="absolute inset-0 w-full h-full object-cover opacity-5 md:opacity-10 pointer-events-none -z-10"
       />
 
       <h2 className="section-heading text-light-text dark:text-dark-text">Contact Me</h2>

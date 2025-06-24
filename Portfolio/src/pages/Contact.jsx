@@ -6,37 +6,35 @@ export default function Contact() {
   const [submissionStatus, setSubmissionStatus] = useState(null);
 
   // !!! IMPORTANT: REPLACE THIS WITH YOUR ACTUAL FORMSPREE ENDPOINT URL !!!
-  // You need to get this from your Formspree.io dashboard after creating a form.
-  // Example: "https://formspree.io/f/xpznwkgj"
-  const FORMSPREE_ENDPOINT = "https://formspree.io/f/YOUR_FORMSPREE_ENDPOINT"; 
+  const FORMSPREE_ENDPOINT = "https://formspree.io/f/YOUR_FORMSPREE_ENDPOINT";
 
   const handleSubmit = async (event) => {
-    event.preventDefault(); // Prevent default browser form submission
-    setSubmissionStatus('sending'); // Set status to indicate sending
+    event.preventDefault();
+    setSubmissionStatus('sending');
 
     const form = event.target;
     const formData = new FormData(form);
 
     try {
       const response = await fetch(FORMSPREE_ENDPOINT, {
-        method: form.method, // "POST"
+        method: form.method,
         body: formData,
         headers: {
-            'Accept': 'application/json' // Essential for Formspree API
+            'Accept': 'application/json'
         }
       });
 
       if (response.ok) {
-        setSubmissionStatus('success'); // Message sent successfully
-        form.reset(); // Clear the form fields
-        setTimeout(() => setSubmissionStatus(null), 5000); // Clear message after 5 seconds
+        setSubmissionStatus('success');
+        form.reset();
+        setTimeout(() => setSubmissionStatus(null), 5000);
       } else {
         const data = await response.json();
-        setSubmissionStatus('error'); // There was an error
-        console.error("Form submission error:", data.errors); // Log specific errors from Formspree
+        setSubmissionStatus('error');
+        console.error("Form submission error:", data.errors);
       }
     } catch (error) {
-      setSubmissionStatus('error'); // Network or other unexpected error
+      setSubmissionStatus('error');
       console.error("Form submission failed:", error);
     }
   };
@@ -47,7 +45,7 @@ export default function Contact() {
       <img
         src={ShanukaProfile4}
         alt="Digital Persona 4 Background"
-        className="absolute inset-0 w-full h-full object-cover opacity-5 md:opacity-10 pointer-events-none -z-10" // Adjust opacity and z-index
+        className="absolute inset-0 w-full h-full object-cover opacity-5 md:opacity-10 pointer-events-none -z-10"
       />
 
       <h2 className="section-heading text-light-text dark:text-dark-text">Contact Me</h2>
@@ -171,9 +169,9 @@ export default function Contact() {
               <input
                 type="text"
                 id="name"
-                name="name" // Added name attribute for Formspree
+                name="name"
                 placeholder="Your Name"
-                required // Added required attribute
+                required
                 className="w-full p-3 rounded-md bg-light-background dark:bg-dark-background border border-light-border dark:border-dark-border
                            focus:ring-2 focus:ring-light-primary dark:focus:ring-dark-primary outline-none transition-all duration-200
                            text-light-text dark:text-dark-text placeholder-light-textSecondary/70 dark:placeholder-dark-textSecondary/70"
@@ -185,9 +183,9 @@ export default function Contact() {
               <input
                 type="email"
                 id="email"
-                name="email" // Added name attribute for Formspree
+                name="email"
                 placeholder="Your Email"
-                required // Added required attribute
+                required
                 className="w-full p-3 rounded-md bg-light-background dark:bg-dark-background border border-light-border dark:border-dark-border
                            focus:ring-2 focus:ring-light-primary dark:focus:ring-dark-primary outline-none transition-all duration-200
                            text-light-text dark:text-dark-text placeholder-light-textSecondary/70 dark:placeholder-dark-textSecondary/70"
@@ -198,10 +196,10 @@ export default function Contact() {
               <label htmlFor="message" className="sr-only">Message</label>
               <textarea
                 id="message"
-                name="message" // Added name attribute for Formspree
+                name="message"
                 rows="5"
                 placeholder="Your Message"
-                required // Added required attribute
+                required
                 className="w-full p-3 rounded-md bg-light-background dark:bg-dark-background border border-light-border dark:border-dark-border
                            focus:ring-2 focus:ring-light-primary dark:focus:ring-dark-primary outline-none transition-all duration-200
                            text-light-text dark:text-dark-text placeholder-light-textSecondary/70 dark:placeholder-dark-textSecondary/70 resize-y"
@@ -210,7 +208,7 @@ export default function Contact() {
             </div>
             <button
               type="submit"
-              disabled={submissionStatus === 'sending'} // Disable button when sending
+              disabled={submissionStatus === 'sending'}
               className="w-full py-3 px-6 bg-light-primary hover:bg-light-accent text-white font-bold rounded-md shadow-md hover:shadow-lg
                          transition-all duration-300 transform hover:scale-105
                          focus:outline-none focus:ring-2 focus:ring-light-primary dark:focus:ring-dark-primary focus:ring-opacity-75"

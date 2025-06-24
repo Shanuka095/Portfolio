@@ -8,7 +8,7 @@ export default {
   theme: {
     extend: {
       fontFamily: {
-        sans: ['Poppins', 'sans-serif'],
+        sans: ['Jost', 'sans-serif'], // Changed font from Inter to Jost
         mono: ['Roboto Mono', 'monospace'],
       },
       colors: {
@@ -70,11 +70,11 @@ export default {
           '0%': { transform: 'scale(0.9)', opacity: '0' },
           '100%': { transform: 'scale(1)', opacity: '1' },
         },
-        'name-glow': { // This is for H1 on Home page
+        'name-glow': {
           '0%, 100%': { 'text-shadow': '0 0 5px rgba(0, 123, 255, 0.5), 0 0 10px rgba(0, 123, 255, 0.2)' },
           '50%': { 'text-shadow': '0 0 10px rgba(0, 123, 255, 0.8), 0 0 20px rgba(0, 123, 255, 0.4)' },
         },
-        'name-glow-dark': { // This is for H1 on Home page
+        'name-glow-dark': {
           '0%, 100%': { 'text-shadow': '0 0 5px rgba(88, 166, 255, 0.5), 0 0 10px rgba(88, 166, 255, 0.2)' },
           '50%': { 'text-shadow': '0 0 10px rgba(88, 166, 255, 0.8), 0 0 20px rgba(88, 166, 255, 0.4)' },
         },
@@ -136,10 +136,27 @@ export default {
           'from, to': { 'border-color': 'transparent' },
           '50%': { 'border-color': 'var(--tw-colors-dark-primary)' }
         },
-        // New: Navbar name continuous animation
         'navbar-name-pulse': {
           '0%, 100%': { transform: 'scale(1)', opacity: '1' },
           '50%': { transform: 'scale(1.03)', opacity: '0.9' },
+        },
+        // New: Super professional background image animation for Home page
+        'background-subtle-float': {
+          '0%, 100%': {
+            transform: 'translateY(0px) scale(1) rotate(12deg)',
+            filter: 'brightness(1) blur(1px)',
+            opacity: '0.05'
+          },
+          '25%': {
+            transform: 'translateY(-5px) scale(1.01) rotate(10deg)',
+            filter: 'brightness(1.05) blur(0.8px)',
+            opacity: '0.06'
+          },
+          '75%': {
+            transform: 'translateY(5px) scale(0.99) rotate(14deg)',
+            filter: 'brightness(0.95) blur(1.2px)',
+            opacity: '0.04'
+          },
         },
       },
       animation: {
@@ -157,17 +174,16 @@ export default {
         'border-pulse-dark': 'border-pulse-dark 4s ease-in-out infinite alternate',
         'slide-in-top': 'slide-in-top 0.4s ease-out forwards',
         'slide-out-top': 'slide-out-top 0.4s ease-out forwards',
-        'float': 'float 3s ease-in-out infinite',
+        'float': 'float 3s ease-in-out infinite', // Renamed from 'background-subtle-float' for ShanukaProfile1.png
         'card-bg-scale': 'card-bg-scale 0.3s ease-out forwards',
         'rotate-once': 'rotate-once 0.5s ease-out',
         'text-soft-glow': 'text-soft-glow 3s ease-in-out infinite alternate',
         'fade-rotate': 'fade-rotate 0.4s ease-out forwards',
         'fade-rotate-out': 'fade-rotate-out 0.4s ease-in forwards',
-        // Typing animation properties (duration will be dynamic in JS)
         'typing': 'typing forwards steps(var(--steps))',
         'blink-caret': 'blink-caret 0.75s step-end infinite',
-        // New: Navbar name continuous animation
         'navbar-name-pulse': 'navbar-name-pulse 2s ease-in-out infinite alternate',
+        'background-subtle-float': 'background-subtle-float 15s ease-in-out infinite alternate',
       }
     },
   },

@@ -56,7 +56,7 @@ export default function Portfolio() {
         <img
           src={portfolioCover}
           alt="Portfolio Cover"
-          className="w-full object-cover aspect-[16/9]" // Ensure aspect ratio for responsiveness
+          className="w-full object-cover aspect-[16/9]"
         />
       </div>
 
@@ -73,7 +73,7 @@ export default function Portfolio() {
             scale={1.02}
             gyroscope={true}
             data-aos="fade-up"
-            data-aos-delay={idx * 100 + 200} // Adjusted delay due to cover image
+            data-aos-delay={idx * 100 + 200}
             data-aos-easing="ease-out-back"
           >
             <div

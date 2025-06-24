@@ -1,7 +1,7 @@
 import React from 'react';
 import { FaCode, FaCogs, FaMobile, FaPencilRuler } from 'react-icons/fa';
 import Tilt from 'react-parallax-tilt';
-import ShanukaProfile3 from '../assets/ShanukaProfile3.png';
+import ShanukaCover2 from '../assets/ShanukaCover2.png'; // Import ShanukaCover2
 
 const servicesList = [
   {
@@ -29,11 +29,11 @@ const servicesList = [
 export default function Services() {
   return (
     <section id="services" className="max-w-6xl mx-auto py-16 md:py-24 px-4 relative overflow-hidden" data-aos="fade-up" data-aos-easing="ease-out-cubic">
-      {/* ShanukaProfile3 as a subtle background image */}
+      {/* ShanukaCover2 as a subtle background image */}
       <img
-        src={ShanukaProfile3}
-        alt="Digital Persona 3 Background"
-        className="absolute inset-0 w-full h-full object-cover opacity-5 md:opacity-10 pointer-events-none -z-10 animate-float"
+        src={ShanukaCover2}
+        alt="Services Background"
+        className="absolute inset-0 w-full h-full object-cover opacity-5 md:opacity-10 pointer-events-none -z-10" // Adjust opacity and z-index
       />
 
       <h2 className="section-heading text-light-text dark:text-dark-text">Services I Offer</h2>

@@ -49,9 +49,9 @@ export default function About() {
           I have practical experience through internships and hands-on projects, showcasing my software engineering skills including full-stack development with the MERN stack.
         </p>
 
-        {/* Removed "My Digital Persona" section and related image imports */}
+        {/* Removed "My Digital Persona" section and associated image imports */}
 
-        <h3 className="text-2xl font-semibold mt-10 mb-6 text-light-text dark:text-dark-text" data-aos="fade-right" data-aos-delay="400">Primary Skills & Expertise</h3> {/* Adjusted delay */}
+        <h3 className="text-2xl font-semibold mt-10 mb-6 text-light-text dark:text-dark-text" data-aos="fade-right" data-aos-delay="400">Primary Skills & Expertise</h3>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6 text-light-textSecondary dark:text-dark-textSecondary">
           {skillCategories.map((category, catIdx) => (
             <div
@@ -59,7 +59,7 @@ export default function About() {
               className="p-5 rounded-lg bg-light-background dark:bg-dark-background border border-light-border dark:border-dark-border shadow-md flex flex-col items-center text-center
                          transform hover:scale-[1.02] hover:shadow-lg transition-all duration-300"
               data-aos="zoom-in"
-              data-aos-delay={500 + (catIdx * 100)} // Adjusted delay
+              data-aos-delay={500 + (catIdx * 100)}
             >
               <category.icon className="text-light-primary dark:text-dark-primary text-5xl mb-4" />
               <h4 className="font-semibold text-light-primary dark:text-dark-primary mb-3 text-xl">{category.title}</h4>

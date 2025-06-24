@@ -123,21 +123,30 @@ export default {
           '0%': { opacity: '1', transform: 'scale(1) rotate(0deg)' },
           '100%': { opacity: '0', transform: 'scale(0.8) rotate(90deg)' },
         },
-        // New: Keyframes for layered images in About section
-        'layer-float-1': {
-          '0%, 100%': { transform: 'translate(0px, 0px) rotate(0deg)' },
-          '33%': { transform: 'translate(5px, -5px) rotate(2deg)' },
-          '66%': { transform: 'translate(-5px, 5px) rotate(-2deg)' },
+        'layer-move-1': { // Unused in final plan, but kept for completeness based on prev thoughts
+          '0%, 100%': { transform: 'translate(-5%, -5%) rotate(2deg)' },
+          '50%': { transform: 'translate(0%, 0%) rotate(0deg)' },
         },
-        'layer-float-2': {
-          '0%, 100%': { transform: 'translate(0px, 0px) rotate(0deg)' },
-          '33%': { transform: 'translate(-5px, -5px) rotate(-3deg)' },
-          '66%': { transform: 'translate(5px, 5px) rotate(3deg)' },
+        'layer-move-2': { // Unused in final plan, but kept for completeness based on prev thoughts
+          '0%, 100%': { transform: 'translate(5%, -5%) rotate(-3deg)' },
+          '50%': { transform: 'translate(0%, 0%) rotate(0deg)' },
         },
-        'layer-float-3': {
-          '0%, 100%': { transform: 'translate(0px, 0px) rotate(0deg)' },
-          '33%': { transform: 'translate(5px, 5px) rotate(1deg)' },
-          '66%': { transform: 'translate(-5px, -5px) rotate(-1deg)' },
+        'layer-move-3': { // Unused in final plan, but kept for completeness based on prev thoughts
+          '0%, 100%': { transform: 'translate(0%, 5%) rotate(1deg)' },
+          '50%': { transform: 'translate(0%, 0%) rotate(0deg)' },
+        },
+        // Typing animation keyframes
+        'typing': {
+          'from': { width: '0' },
+          'to': { width: '100%' }
+        },
+        'blink-caret': {
+          'from, to': { 'border-color': 'transparent' },
+          '50%': { 'border-color': 'var(--tw-colors-light-primary)' }
+        },
+        'blink-caret-dark': {
+          'from, to': { 'border-color': 'transparent' },
+          '50%': { 'border-color': 'var(--tw-colors-dark-primary)' }
         },
       },
       animation: {
@@ -161,10 +170,9 @@ export default {
         'text-soft-glow': 'text-soft-glow 3s ease-in-out infinite alternate',
         'fade-rotate': 'fade-rotate 0.4s ease-out forwards',
         'fade-rotate-out': 'fade-rotate-out 0.4s ease-in forwards',
-        // New animations for layered images
-        'layer-float-1': 'layer-float-1 10s ease-in-out infinite alternate',
-        'layer-float-2': 'layer-float-2 12s ease-in-out infinite alternate',
-        'layer-float-3': 'layer-float-3 11s ease-in-out infinite alternate',
+        // Typing animation properties (duration will be dynamic in JS)
+        'typing': 'typing forwards steps(var(--steps))',
+        'blink-caret': 'blink-caret 0.75s step-end infinite',
       }
     },
   },

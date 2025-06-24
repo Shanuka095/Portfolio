@@ -37,7 +37,6 @@ export default {
         '3d-light': '5px 5px 20px rgba(0,0,0,0.15)',
         '3d-dark': '5px 5px 20px rgba(0,0,0,0.6)',
       },
-      // New easing functions for smoother animations
       transitionTimingFunction: {
         'ease-out-quart': 'cubic-bezier(0.25, 1, 0.5, 1)',
         'ease-in-out-quart': 'cubic-bezier(0.76, 0, 0.24, 1)',
@@ -112,12 +111,10 @@ export default {
           '0%': { transform: 'rotate(0deg)' },
           '100%': { transform: 'rotate(360deg)' },
         },
-        // New: Subtle text glow for Home page paragraphs
         'text-soft-glow': {
           '0%, 100%': { 'filter': 'drop-shadow(0 0 0px transparent)' },
           '50%': { 'filter': 'drop-shadow(0 0 2px rgba(0, 123, 255, 0.3))' },
         },
-        // New: For dark mode toggle transition
         'fade-rotate': {
           '0%': { opacity: '0', transform: 'scale(0.8) rotate(-90deg)' },
           '100%': { opacity: '1', transform: 'scale(1) rotate(0deg)' },
@@ -125,7 +122,23 @@ export default {
         'fade-rotate-out': {
           '0%': { opacity: '1', transform: 'scale(1) rotate(0deg)' },
           '100%': { opacity: '0', transform: 'scale(0.8) rotate(90deg)' },
-        }
+        },
+        // New: Keyframes for layered images in About section
+        'layer-float-1': {
+          '0%, 100%': { transform: 'translate(0px, 0px) rotate(0deg)' },
+          '33%': { transform: 'translate(5px, -5px) rotate(2deg)' },
+          '66%': { transform: 'translate(-5px, 5px) rotate(-2deg)' },
+        },
+        'layer-float-2': {
+          '0%, 100%': { transform: 'translate(0px, 0px) rotate(0deg)' },
+          '33%': { transform: 'translate(-5px, -5px) rotate(-3deg)' },
+          '66%': { transform: 'translate(5px, 5px) rotate(3deg)' },
+        },
+        'layer-float-3': {
+          '0%, 100%': { transform: 'translate(0px, 0px) rotate(0deg)' },
+          '33%': { transform: 'translate(5px, 5px) rotate(1deg)' },
+          '66%': { transform: 'translate(-5px, -5px) rotate(-1deg)' },
+        },
       },
       animation: {
         'fade-in-up': 'fade-in-up 0.6s ease-out forwards',
@@ -148,6 +161,10 @@ export default {
         'text-soft-glow': 'text-soft-glow 3s ease-in-out infinite alternate',
         'fade-rotate': 'fade-rotate 0.4s ease-out forwards',
         'fade-rotate-out': 'fade-rotate-out 0.4s ease-in forwards',
+        // New animations for layered images
+        'layer-float-1': 'layer-float-1 10s ease-in-out infinite alternate',
+        'layer-float-2': 'layer-float-2 12s ease-in-out infinite alternate',
+        'layer-float-3': 'layer-float-3 11s ease-in-out infinite alternate',
       }
     },
   },

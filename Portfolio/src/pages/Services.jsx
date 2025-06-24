@@ -37,7 +37,7 @@ export default function Services() {
       />
 
       <h2 className="section-heading text-light-text dark:text-dark-text">Services I Offer</h2>
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-2 gap-8 relative z-10"> {/* Ensure content is above background image */}
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-2 gap-8 relative z-10">
         {servicesList.map((service, idx) => (
           <Tilt
             key={idx}

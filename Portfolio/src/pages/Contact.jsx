@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { FaEnvelope, FaPhoneAlt, FaLinkedin, FaGithub, FaFacebook, FaInstagram } from 'react-icons/fa';
-import ShanukaProfile4 from '../assets/ShanukaProfile4.png'; // Import ShanukaProfile4
+import ShanukaCover3 from '../assets/ShanukaCover3.png'; // Import ShanukaCover3
 
 export default function Contact() {
   const [submissionStatus, setSubmissionStatus] = useState(null);
@@ -41,11 +41,11 @@ export default function Contact() {
 
   return (
     <section id="contact" className="max-w-4xl mx-auto mb-20 py-16 md:py-24 px-4 relative overflow-hidden" data-aos="fade-up" data-aos-easing="ease-out-cubic">
-      {/* ShanukaProfile4 as a subtle background image */}
+      {/* ShanukaCover3 as a subtle background image */}
       <img
-        src={ShanukaProfile4}
-        alt="Digital Persona 4 Background"
-        className="absolute inset-0 w-full h-full object-cover opacity-5 md:opacity-10 pointer-events-none -z-10"
+        src={ShanukaCover3}
+        alt="Contact Background"
+        className="absolute inset-0 w-full h-full object-cover opacity-5 md:opacity-10 pointer-events-none -z-10" // Adjust opacity and z-index
       />
 
       <h2 className="section-heading text-light-text dark:text-dark-text">Contact Me</h2>

@@ -1,11 +1,18 @@
 import React from 'react';
 import profilePic from '../assets/ShanukaProfile.png';
 import ShanukaProfile1 from '../assets/ShanukaProfile1.png';
+import homeCoverBackground from '../assets/ShanukaCover.png'; // Use ShanukaCover as home background
 import myCV from '../assets/Shanuka_Induran_CV.pdf';
 import { Link } from 'react-scroll';
 import { FaGithub, FaLinkedin, FaFacebook, FaInstagram, FaDownload } from 'react-icons/fa';
+import TypingEffect from '../components/TypingEffect'; // Import the new TypingEffect component
 
 export default function Home() {
+  const typingPhrases = [
+    "Hello, I'm Shanuka Induran.",
+    "A FullStack Developer."
+  ];
+
   return (
     <section
       id="home"
@@ -14,6 +21,13 @@ export default function Home() {
       data-aos-duration="1000"
       data-aos-easing="ease-out-cubic"
     >
+      {/* ShanukaCover.png as a subtle background image for the section */}
+      <img
+        src={homeCoverBackground}
+        alt="Home Background Texture"
+        className="absolute inset-0 w-full h-full object-cover opacity-[0.03] md:opacity-[0.05] pointer-events-none -z-20" // Very subtle
+      />
+
       {/* Subtle background blob/gradient animation */}
       <div className="absolute top-1/4 left-1/4 w-72 h-72 bg-light-primary/20 dark:bg-dark-primary/20 rounded-full mix-blend-multiply filter blur-xl opacity-70 animate-blob animation-delay-2000 pointer-events-none"></div>
       <div className="absolute bottom-1/3 right-1/4 w-72 h-72 bg-light-accent/20 dark:bg-dark-accent/20 rounded-full mix-blend-multiply filter blur-xl opacity-70 animate-blob animation-delay-4000 pointer-events-none"></div>
@@ -39,24 +53,17 @@ export default function Home() {
         Shanuka Induran
       </h1>
 
-      <p
-        className="text-xl md:text-2xl lg:text-3xl max-w-3xl mx-auto leading-relaxed text-light-textSecondary dark:text-dark-textSecondary relative z-10"
-        data-aos="fade-up"
-        data-aos-duration="1200"
-        data-aos-delay="600"
-      >
-        I’m a passionate **Information Technology student specializing in Software Engineering** at SLIIT.
-        I enjoy building innovative software solutions using modern technologies like the **MERN stack**,
-        and exploring the intersection of technology and creativity.
-      </p>
-      <p
-        className="text-xl md:text-2xl lg:text-3xl max-w-3xl mx-auto leading-relaxed text-light-textSecondary dark:text-dark-textSecondary mt-2 relative z-10"
-        data-aos="fade-up"
-        data-aos-duration="1200"
-        data-aos-delay="800"
-      >
-        Currently, I’m focused on developing scalable, user-friendly applications and expanding my skills in full-stack development.
-      </p>
+      {/* Typing Effect Component */}
+      <div className="text-xl md:text-2xl lg:text-3xl max-w-3xl mx-auto leading-relaxed text-light-textSecondary dark:text-dark-textSecondary relative z-10 mt-2 h-16 sm:h-auto overflow-hidden">
+        <TypingEffect
+          phrases={typingPhrases}
+          typingSpeed={70}
+          deletingSpeed={30}
+          pauseTime={1500}
+          className="inline-block"
+        />
+      </div>
+
 
       {/* Social Media Icons */}
       <div className="flex justify-center space-x-6 mt-8 relative z-10" data-aos="fade-up" data-aos-delay="1200">

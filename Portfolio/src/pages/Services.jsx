@@ -1,7 +1,7 @@
 import React from 'react';
 import { FaCode, FaCogs, FaMobile, FaPencilRuler } from 'react-icons/fa';
 import Tilt from 'react-parallax-tilt';
-import ShanukaProfile3 from '../assets/ShanukaProfile3.png'; // Import ShanukaProfile3
+import ShanukaProfile3 from '../assets/ShanukaProfile3.png';
 
 const servicesList = [
   {
@@ -33,7 +33,7 @@ export default function Services() {
       <img
         src={ShanukaProfile3}
         alt="Digital Persona 3 Background"
-        className="absolute inset-0 w-full h-full object-cover opacity-5 md:opacity-10 pointer-events-none -z-10 animate-float" // Adjust opacity and z-index, add float animation
+        className="absolute inset-0 w-full h-full object-cover opacity-5 md:opacity-10 pointer-events-none -z-10 animate-float"
       />
 
       <h2 className="section-heading text-light-text dark:text-dark-text">Services I Offer</h2>

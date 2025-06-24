@@ -143,3 +143,22 @@ html.dark .animated-name {
 html.dark .profile-border-animated {
   animation: border-pulse-dark 4s ease-in-out infinite alternate;
 }
+
+/* Typing effect specific styles */
+.typing-container {
+  white-space: nowrap;
+  overflow: hidden;
+  border-right: 3px solid; /* Initial caret */
+  font-family: 'Roboto Mono', monospace; /* Monospace font for typing */
+  @apply border-light-primary dark:border-dark-primary; /* Caret color */
+}
+
+.typing-animation {
+  animation: typing var(--typing-duration) steps(var(--steps)) forwards,
+             blink-caret 0.75s step-end infinite;
+}
+
+html.dark .typing-animation {
+  animation: typing var(--typing-duration) steps(var(--steps)) forwards,
+             blink-caret-dark 0.75s step-end infinite;
+}

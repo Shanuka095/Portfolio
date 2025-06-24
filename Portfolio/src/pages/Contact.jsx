@@ -1,11 +1,19 @@
 import React from 'react';
 import { FaEnvelope, FaPhoneAlt, FaLinkedin, FaGithub, FaFacebook, FaInstagram } from 'react-icons/fa';
+import ShanukaProfile4 from '../assets/ShanukaProfile4.png'; // Import ShanukaProfile4
 
 export default function Contact() {
   return (
-    <section id="contact" className="max-w-4xl mx-auto mb-20 py-16 md:py-24 px-4" data-aos="fade-up" data-aos-easing="ease-out-cubic">
+    <section id="contact" className="max-w-4xl mx-auto mb-20 py-16 md:py-24 px-4 relative overflow-hidden" data-aos="fade-up" data-aos-easing="ease-out-cubic">
+      {/* ShanukaProfile4 as a subtle background image */}
+      <img
+        src={ShanukaProfile4}
+        alt="Digital Persona 4 Background"
+        className="absolute inset-0 w-full h-full object-cover opacity-5 md:opacity-10 pointer-events-none -z-10" // Adjust opacity and z-index
+      />
+
       <h2 className="section-heading text-light-text dark:text-dark-text">Contact Me</h2>
-      <div className="bg-light-card dark:bg-dark-card p-8 rounded-xl shadow-custom-light dark:shadow-custom-dark transition-colors duration-500 border border-light-border dark:border-dark-border grid grid-cols-1 md:grid-cols-2 gap-8">
+      <div className="bg-light-card dark:bg-dark-card p-8 rounded-xl shadow-custom-light dark:shadow-custom-dark transition-colors duration-500 border border-light-border dark:border-dark-border grid grid-cols-1 md:grid-cols-2 gap-8 relative z-10"> {/* Ensure content is above background image */}
 
         {/* Contact Info Section */}
         <div data-aos="fade-right" data-aos-delay="100">

@@ -1,5 +1,6 @@
 import React from 'react';
 import profilePic from '../assets/ShanukaProfile.png';
+import ShanukaProfile1 from '../assets/ShanukaProfile1.png';
 import myCV from '../assets/Shanuka_Induran_CV.pdf';
 import { Link } from 'react-scroll';
 import { FaGithub, FaLinkedin, FaFacebook, FaInstagram, FaDownload } from 'react-icons/fa';
@@ -16,6 +17,13 @@ export default function Home() {
       {/* Subtle background blob/gradient animation */}
       <div className="absolute top-1/4 left-1/4 w-72 h-72 bg-light-primary/20 dark:bg-dark-primary/20 rounded-full mix-blend-multiply filter blur-xl opacity-70 animate-blob animation-delay-2000 pointer-events-none"></div>
       <div className="absolute bottom-1/3 right-1/4 w-72 h-72 bg-light-accent/20 dark:bg-dark-accent/20 rounded-full mix-blend-multiply filter blur-xl opacity-70 animate-blob animation-delay-4000 pointer-events-none"></div>
+
+      {/* ShanukaProfile1 as a floating background element */}
+      <img
+        src={ShanukaProfile1}
+        alt="Shanuka Induran Digital Persona"
+        className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-48 h-48 sm:w-64 sm:h-64 md:w-80 md:h-80 object-contain opacity-5 transform rotate-12 -z-10 animate-float"
+      />
 
       <img
         src={profilePic}

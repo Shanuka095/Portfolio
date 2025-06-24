@@ -1,6 +1,6 @@
 import React from 'react';
 import { FaLaptopCode, FaReact, FaDatabase, FaTools, FaMobileAlt, FaDraftingCompass } from 'react-icons/fa';
-// Removed image imports for ShanukaCover1, ShanukaCover2, ShanukaCover3 from here
+import ShanukaCover1 from '../assets/ShanukaCover1.png'; // Import ShanukaCover1
 
 const skillCategories = [
   {
@@ -37,9 +37,16 @@ const skillCategories = [
 
 export default function About() {
   return (
-    <section id="about" className="max-w-4xl mx-auto py-16 md:py-24 px-4" data-aos="fade-up" data-aos-easing="ease-out-cubic">
+    <section id="about" className="max-w-4xl mx-auto py-16 md:py-24 px-4 relative overflow-hidden" data-aos="fade-up" data-aos-easing="ease-out-cubic">
+      {/* ShanukaCover1 as a subtle background image */}
+      <img
+        src={ShanukaCover1}
+        alt="About Background"
+        className="absolute inset-0 w-full h-full object-cover opacity-5 md:opacity-10 pointer-events-none -z-10" // Adjust opacity and z-index
+      />
+
       <h2 className="section-heading text-light-text dark:text-dark-text">About Me</h2>
-      <div className="bg-light-card dark:bg-dark-card p-8 rounded-xl shadow-custom-light dark:shadow-custom-dark transition-colors duration-500 border border-light-border dark:border-dark-border">
+      <div className="bg-light-card dark:bg-dark-card p-8 rounded-xl shadow-custom-light dark:shadow-custom-dark transition-colors duration-500 border border-light-border dark:border-dark-border relative z-10">
         <p className="mb-4 text-light-textSecondary dark:text-dark-textSecondary leading-relaxed text-lg" data-aos="fade-up" data-aos-delay="100">
           I am currently pursuing a Bachelor of Science Honours in Information Technology, specializing in Software Engineering, at the Sri Lanka Institute of Information Technology (SLIIT), expecting to graduate in 2026.
         </p>

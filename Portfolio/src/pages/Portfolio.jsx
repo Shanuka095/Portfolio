@@ -1,5 +1,7 @@
 import React from 'react';
 import Tilt from 'react-parallax-tilt';
+import ShanukaProfile2 from '../assets/ShanukaProfile2.png';
+import portfolioCover from '../assets/ShanukaCover.png'; // Import the portfolio cover image
 
 const projects = [
   {
@@ -48,6 +50,16 @@ export default function Portfolio() {
   return (
     <section id="portfolio" className="max-w-6xl mx-auto py-16 md:py-24 px-4" data-aos="fade-up" data-aos-easing="ease-out-cubic">
       <h2 className="section-heading text-light-text dark:text-dark-text">My Portfolio</h2>
+
+      {/* Portfolio Cover Image */}
+      <div className="mb-8 rounded-xl shadow-lg overflow-hidden" data-aos="fade-down" data-aos-delay="100">
+        <img
+          src={portfolioCover}
+          alt="Portfolio Cover"
+          className="w-full object-cover aspect-[16/9]" // Ensure aspect ratio for responsiveness
+        />
+      </div>
+
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
         {projects.map((project, idx) => (
           <Tilt
@@ -61,14 +73,21 @@ export default function Portfolio() {
             scale={1.02}
             gyroscope={true}
             data-aos="fade-up"
-            data-aos-delay={idx * 100}
+            data-aos-delay={idx * 100 + 200} // Adjusted delay due to cover image
             data-aos-easing="ease-out-back"
           >
             <div
-              className="bg-light-card dark:bg-dark-card rounded-xl overflow-hidden flex flex-col h-full border border-light-border dark:border-dark-border"
+              className="bg-light-card dark:bg-dark-card rounded-xl overflow-hidden flex flex-col h-full border border-light-border dark:border-dark-border relative group"
             >
+              {/* ShanukaProfile2 as a subtle background image on hover */}
+              <img
+                src={ShanukaProfile2}
+                alt="Digital watermark"
+                className="absolute inset-0 w-full h-full object-cover opacity-0 transition-opacity duration-300 group-hover:opacity-[0.05] md:group-hover:opacity-[0.1] lg:group-hover:opacity-[0.15] pointer-events-none"
+              />
+
               {project.image && (
-                <div className="overflow-hidden">
+                <div className="overflow-hidden relative z-10">
                   <img
                     src={project.image}
                     alt={project.name}
@@ -76,7 +95,7 @@ export default function Portfolio() {
                   />
                 </div>
               )}
-              <div className="p-6 flex flex-col flex-grow">
+              <div className="p-6 flex flex-col flex-grow relative z-10">
                 <h3 className="text-2xl font-semibold mb-3 text-light-primary dark:text-dark-primary">{project.name}</h3>
                 <p className="text-light-textSecondary dark:text-dark-textSecondary text-base leading-relaxed mb-4 flex-grow">
                   {project.description}

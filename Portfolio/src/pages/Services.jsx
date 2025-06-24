@@ -33,7 +33,7 @@ export default function Services() {
       <img
         src={ShanukaCover2}
         alt="Services Background"
-        className="absolute inset-0 w-full h-full object-cover opacity-5 md:opacity-10 pointer-events-none -z-10" // Adjust opacity and z-index
+        className="absolute inset-0 w-full h-full object-cover opacity-5 md:opacity-10 pointer-events-none -z-10"
       />
 
       <h2 className="section-heading text-light-text dark:text-dark-text">Services I Offer</h2>

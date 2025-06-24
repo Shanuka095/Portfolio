@@ -70,11 +70,11 @@ export default {
           '0%': { transform: 'scale(0.9)', opacity: '0' },
           '100%': { transform: 'scale(1)', opacity: '1' },
         },
-        'name-glow': {
+        'name-glow': { // This is for H1 on Home page
           '0%, 100%': { 'text-shadow': '0 0 5px rgba(0, 123, 255, 0.5), 0 0 10px rgba(0, 123, 255, 0.2)' },
           '50%': { 'text-shadow': '0 0 10px rgba(0, 123, 255, 0.8), 0 0 20px rgba(0, 123, 255, 0.4)' },
         },
-        'name-glow-dark': {
+        'name-glow-dark': { // This is for H1 on Home page
           '0%, 100%': { 'text-shadow': '0 0 5px rgba(88, 166, 255, 0.5), 0 0 10px rgba(88, 166, 255, 0.2)' },
           '50%': { 'text-shadow': '0 0 10px rgba(88, 166, 255, 0.8), 0 0 20px rgba(88, 166, 255, 0.4)' },
         },
@@ -123,18 +123,6 @@ export default {
           '0%': { opacity: '1', transform: 'scale(1) rotate(0deg)' },
           '100%': { opacity: '0', transform: 'scale(0.8) rotate(90deg)' },
         },
-        'layer-move-1': { // Unused in final plan, but kept for completeness based on prev thoughts
-          '0%, 100%': { transform: 'translate(-5%, -5%) rotate(2deg)' },
-          '50%': { transform: 'translate(0%, 0%) rotate(0deg)' },
-        },
-        'layer-move-2': { // Unused in final plan, but kept for completeness based on prev thoughts
-          '0%, 100%': { transform: 'translate(5%, -5%) rotate(-3deg)' },
-          '50%': { transform: 'translate(0%, 0%) rotate(0deg)' },
-        },
-        'layer-move-3': { // Unused in final plan, but kept for completeness based on prev thoughts
-          '0%, 100%': { transform: 'translate(0%, 5%) rotate(1deg)' },
-          '50%': { transform: 'translate(0%, 0%) rotate(0deg)' },
-        },
         // Typing animation keyframes
         'typing': {
           'from': { width: '0' },
@@ -147,6 +135,11 @@ export default {
         'blink-caret-dark': {
           'from, to': { 'border-color': 'transparent' },
           '50%': { 'border-color': 'var(--tw-colors-dark-primary)' }
+        },
+        // New: Navbar name continuous animation
+        'navbar-name-pulse': {
+          '0%, 100%': { transform: 'scale(1)', opacity: '1' },
+          '50%': { transform: 'scale(1.03)', opacity: '0.9' },
         },
       },
       animation: {
@@ -173,6 +166,8 @@ export default {
         // Typing animation properties (duration will be dynamic in JS)
         'typing': 'typing forwards steps(var(--steps))',
         'blink-caret': 'blink-caret 0.75s step-end infinite',
+        // New: Navbar name continuous animation
+        'navbar-name-pulse': 'navbar-name-pulse 2s ease-in-out infinite alternate',
       }
     },
   },

@@ -1,5 +1,6 @@
 import React from 'react';
 import { FaLaptopCode, FaReact, FaDatabase, FaTools, FaMobileAlt, FaDraftingCompass } from 'react-icons/fa';
+// Removed image imports for ShanukaCover1, ShanukaCover2, ShanukaCover3 from here
 
 const skillCategories = [
   {
@@ -48,8 +49,6 @@ export default function About() {
         <p className="mb-4 text-light-textSecondary dark:text-dark-textSecondary leading-relaxed text-lg" data-aos="fade-up" data-aos-delay="300">
           I have practical experience through internships and hands-on projects, showcasing my software engineering skills including full-stack development with the MERN stack.
         </p>
-
-        {/* Removed "My Digital Persona" section and associated image imports */}
 
         <h3 className="text-2xl font-semibold mt-10 mb-6 text-light-text dark:text-dark-text" data-aos="fade-right" data-aos-delay="400">Primary Skills & Expertise</h3>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6 text-light-textSecondary dark:text-dark-textSecondary">

@@ -43,8 +43,9 @@ export default function Home() {
         src={profilePic}
         alt="Shanuka Induran"
         className="mx-auto rounded-full w-48 h-48 object-cover mb-8 shadow-xl border-4 border-light-primary dark:border-dark-primary
-                   transition-colors duration-500 transform hover:scale-105 relative z-10
-                   animated-profile-photo profile-border-animated animate-profile-pulse" // Added animate-profile-pulse
+                   transition-colors duration-500 relative z-10
+                   animated-profile-photo profile-border-animated
+                   animate-profile-breathe hover:animate-profile-hover-scale-pulse"
       />
 
       {/* Changed H1 text */}
@@ -82,7 +83,7 @@ export default function Home() {
           <FaLinkedin />
         </a>
         <a href="https://web.facebook.com/shanuka.induran" target="_blank" rel="noopener noreferrer"
-           className="text-light-textSecondary dark:text-dark-textSecondary hover:text-light-primary dark:hover:text-dark-primary
+           className="text-light-textSecondary dark:text-dark-textSecondary hover:text-light-primary dark:hover:text-primary
                       transform hover:scale-125 transition-all duration-300 text-3xl" aria-label="Facebook">
           <FaFacebook />
         </a>

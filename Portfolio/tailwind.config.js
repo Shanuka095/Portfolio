@@ -38,7 +38,7 @@ export default {
         '3d-dark': '5px 5px 20px rgba(0,0,0,0.6)',
       },
       transitionTimingFunction: {
-        'ease-out-quart': 'cubic-bezier(0.25, 1, 0.5, 1)',
+        'ease-out-quart': 'cubic-bezier(0.25, 1, 0.5, 1)', // Ensure this is defined
         'ease-in-out-quart': 'cubic-bezier(0.76, 0, 0.24, 1)',
       },
       keyframes: {
@@ -228,8 +228,8 @@ export default {
         'scale-out': 'scale-out 0.3s ease-out forwards',
         'lift-and-glow': 'lift-and-glow 3s ease-in-out infinite alternate',
         'lift-and-glow-dark': 'lift-and-glow-dark 3s ease-in-out infinite alternate',
-        'profile-breathe': 'profile-breathe 4s ease-in-out infinite alternate', // Applied to ShanukaProfile.png
-        'profile-hover-scale-pulse': 'profile-hover-scale-pulse 1.5s ease-in-out infinite alternate', // Applied on hover
+        'profile-breathe': 'profile-breathe 4s ease-in-out infinite alternate',
+        'profile-hover-scale-pulse': 'profile-hover-scale-pulse 1.5s ease-in-out infinite alternate',
       }
     },
   },

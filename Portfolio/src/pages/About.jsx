@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
-import { FaLaptopCode, FaReact, FaDatabase, FaTools, FaMobileAlt, FaDraftingCompass, FaTimes } from 'react-icons/fa';
+import { FaLaptopCode, FaReact, FaDatabase, FaTools, FaMobileAlt, FaDraftingCompass } from 'react-icons/fa'; // Removed FaTimes
 import ShanukaCover1 from '../assets/ShanukaCover1.png';
+import ShanukaProfile2 from '../assets/ShanukaProfile2.png';
 
 // Import certificate images
 import FrontEndCert from '../assets/FrontEnd.png';
@@ -47,44 +48,45 @@ const certifications = [
     name: "Python for Beginners",
     issuer: "University of Moratuwa",
     image: PythonCert,
-    description: "Python fundamentals, syntax, control structures, basic problem solving."
+    description: "Python fundamentals, syntax, control structures, basic problem solving.",
+    verificationCode: "fAzinQoK98",
+    verificationLink: "https://open.uom.lk/verify"
   },
   {
     name: "Web Design for Beginners",
     issuer: "University of Moratuwa",
     image: WebDesignCert,
-    description: "HTML, CSS, responsive layout design, web design principles."
+    description: "HTML, CSS, responsive layout design, web design principles.",
+    verificationCode: "VlRHXnwtx2",
+    verificationLink: "https://open.uom.lk/verify"
   },
   {
     name: "Introduction to MERN Stack",
     issuer: "Simplilearn SkillUp",
     image: MERNCert,
     description: "Fullstack web development basics using MongoDB, Express.js, React.js, and Node.js."
+    // No verification code/link as per instruction, will be handled by conditional rendering
   },
   {
     name: "Front-End Web Development",
     issuer: "University of Moratuwa",
     image: FrontEndCert,
-    description: "Front-end development fundamentals, Angular framework, jQuery, AJAX, Single Page Applications (SPA)."
+    description: "Front-end development fundamentals, Angular framework, jQuery, AJAX, Single Page Applications (SPA).",
+    verificationCode: "VD4syYC0Sh",
+    verificationLink: "https://open.uom.lk/verify"
   },
 ];
 
 export default function About() {
-  const [selectedImage, setSelectedImage] = useState(null);
-  const [isModalClosing, setIsModalClosing] = useState(false);
+  const [copiedCode, setCopiedCode] = useState(null);
 
-  const openModal = (imageSrc) => {
-    setSelectedImage(imageSrc);
-    setIsModalClosing(false);
-    document.body.style.overflow = 'hidden'; // Prevent scrolling when modal is open
-  };
-
-  const closeModal = () => {
-    setIsModalClosing(true);
-    setTimeout(() => {
-      setSelectedImage(null);
-      document.body.style.overflow = 'unset'; // Re-enable scrolling
-    }, 300); // Match this duration with your scale-out animation duration
+  const copyToClipboard = (code, certName) => {
+    navigator.clipboard.writeText(code).then(() => {
+      setCopiedCode(certName);
+      setTimeout(() => setCopiedCode(null), 2000); // Reset after 2 seconds
+    }).catch(err => {
+      console.error('Failed to copy: ', err);
+    });
   };
 
   return (
@@ -100,15 +102,30 @@ export default function About() {
       <div className="bg-light-card dark:bg-dark-card p-8 rounded-xl shadow-custom-light dark:shadow-custom-dark transition-colors duration-500 border border-light-border dark:border-dark-border relative z-10">
         <p className="mb-4 text-light-textSecondary dark:text-dark-textSecondary leading-relaxed text-lg" data-aos="fade-up" data-aos-delay="100">
           I am currently pursuing a Bachelor of Science Honours in Information Technology, specializing in Software Engineering, at the Sri Lanka Institute of Information Technology (SLIIT), expecting to graduate in 2026.
-        </p>
-        <p className="mb-4 text-light-textSecondary dark:text-dark-textSecondary leading-relaxed text-lg" data-aos="fade-up" data-aos-delay="200">
-          Previously, I completed my Higher National Diploma (HND) in Information Technology, which laid a strong foundation in core IT principles and practical skills.
-        </p>
-        <p className="mb-4 text-light-textSecondary dark:text-dark-textSecondary leading-relaxed text-lg" data-aos="fade-up" data-aos-delay="300">
-          I have hands-on experience through various projects, showcasing my software engineering skills including full-stack development with the MERN stack.
+          I am actively seeking a Fullstack Development internship. Proficient in both frontend and backend technologies, with hands-on experience building dynamic, responsive web applications. Skilled in JavaScript, React, Node.js, Express, MongoDB, and UI frameworks such as Tailwind CSS and Bootstrap. Experienced in developing MERN stack projects with a strong focus on performance, usability, and clean code practices. Passionate about real-world problem solving, continuous improvement, and working in collaborative development environments.
         </p>
 
-        <h3 className="text-2xl font-semibold mt-10 mb-6 text-light-text dark:text-dark-text" data-aos="fade-right" data-aos-delay="400">Primary Skills & Expertise</h3>
+        {/* Education Section */}
+        <h3 className="text-2xl font-semibold mt-10 mb-6 text-light-text dark:text-dark-text" data-aos="fade-right" data-aos-delay="300">Education</h3>
+        <div className="space-y-6 mb-10">
+          <div data-aos="fade-up" data-aos-delay="400">
+            <h4 className="font-semibold text-light-primary dark:text-dark-primary text-xl mb-1">Bachelor of Science Honors in Information Technology - Undergraduate</h4>
+            <p className="text-light-textSecondary dark:text-dark-textSecondary text-md">Sri Lanka Institute of Information Technology | Jan 2023 - Present</p>
+            <p className="text-light-textSecondary dark:text-dark-textSecondary text-md mt-1">Specialized in Software Engineering (3rd year, 1st semester).</p>
+          </div>
+          <div data-aos="fade-up" data-aos-delay="500">
+            <h4 className="font-semibold text-light-primary dark:text-dark-primary text-xl mb-1">G.C.E. Advanced Level – Technology Stream</h4>
+            <p className="text-light-textSecondary dark:text-dark-textSecondary text-md">Shariputre College, Matara | Aug 2021</p>
+            <ul className="list-disc list-inside text-light-textSecondary dark:text-dark-textSecondary text-md mt-1 ml-4">
+              <li>Engineering Technology - B</li>
+              <li>Science for Technology - C</li>
+              <li>ICT - S</li>
+            </ul>
+            <p className="text-light-textSecondary dark:text-dark-textSecondary text-sm mt-1">Index Number: 6082572</p>
+          </div>
+        </div>
+
+        <h3 className="text-2xl font-semibold mt-10 mb-6 text-light-text dark:text-dark-text" data-aos="fade-right" data-aos-delay="600">Primary Skills & Expertise</h3>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6 text-light-textSecondary dark:text-dark-textSecondary">
           {skillCategories.map((category, catIdx) => (
             <div
@@ -116,7 +133,7 @@ export default function About() {
               className="p-5 rounded-lg bg-light-background dark:bg-dark-background border border-light-border dark:border-dark-border shadow-md flex flex-col items-center text-center
                          transform hover:scale-[1.02] hover:shadow-lg transition-all duration-300"
               data-aos="zoom-in"
-              data-aos-delay={500 + (catIdx * 100)}
+              data-aos-delay={700 + (catIdx * 100)}
             >
               <category.icon className="text-light-primary dark:text-dark-primary text-5xl mb-4" />
               <h4 className="font-semibold text-light-primary dark:text-dark-primary mb-3 text-xl">{category.title}</h4>
@@ -136,55 +153,57 @@ export default function About() {
           ))}
         </div>
 
-        <h3 className="text-2xl font-semibold mt-10 mb-6 text-light-text dark:text-dark-text" data-aos="fade-right" data-aos-delay="800">Certifications</h3>
+        <h3 className="text-2xl font-semibold mt-10 mb-6 text-light-text dark:text-dark-text" data-aos="fade-right" data-aos-delay="1000">Certifications</h3>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           {certifications.map((cert, certIdx) => (
             <div
               key={certIdx}
               className="p-5 rounded-lg bg-light-background dark:bg-dark-background border border-light-border dark:border-dark-border shadow-md flex flex-col items-center text-center
-                         cursor-pointer group relative overflow-hidden transform transition-all duration-300
-                         hover:scale-[1.02] hover:shadow-lg hover:animate-lift-and-glow dark:hover:animate-lift-and-glow-dark" // Added new hover animation classes
+                         group relative overflow-hidden transform transition-all duration-300
+                         hover:scale-[1.02] hover:shadow-lg hover:animate-lift-and-glow dark:hover:animate-lift-and-glow-dark"
               data-aos="zoom-in"
-              data-aos-delay={900 + (certIdx * 100)}
-              onClick={() => openModal(cert.image)}
+              data-aos-delay={1100 + (certIdx * 100)}
             >
-              <img src={cert.image} alt={cert.name} className="w-24 h-24 object-contain mb-4" />
-              <h4 className="font-semibold text-light-primary dark:text-dark-primary mb-2 text-xl">{cert.name}</h4>
-              <p className="text-light-textSecondary dark:text-dark-textSecondary text-sm mb-2">{cert.issuer}</p>
-              <p className="text-light-textSecondary dark:text-dark-textSecondary text-base leading-relaxed">{cert.description}</p>
+              {/* ShanukaProfile2 as a subtle background image on hover */}
+              <img
+                src={ShanukaProfile2}
+                alt="Digital watermark"
+                className="absolute inset-0 w-full h-full object-cover opacity-0 transition-opacity duration-300 group-hover:opacity-[0.05] md:group-hover:opacity-[0.1] lg:group-hover:opacity-[0.15] pointer-events-none"
+              />
+              <img src={cert.image} alt={cert.name} className="w-24 h-24 object-contain mb-4 relative z-10" />
+              <a
+                href={cert.verificationLink}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="font-semibold text-light-primary dark:text-dark-primary mb-2 text-xl relative z-10
+                           hover:underline hover:underline-offset-4 hover:decoration-light-accent dark:hover:decoration-dark-accent transition-all duration-200"
+              >
+                {cert.name}
+              </a>
+              <p className="text-light-textSecondary dark:text-dark-textSecondary text-sm mb-2 relative z-10">{cert.issuer}</p>
+              <p className="text-light-textSecondary dark:text-dark-textSecondary text-base leading-relaxed mb-4 relative z-10">{cert.description}</p>
+
+              {cert.verificationCode && (
+                <div className="relative z-10">
+                  <button
+                    onClick={(e) => {
+                      e.stopPropagation(); // Prevent opening link when copying
+                      copyToClipboard(cert.verificationCode, cert.name);
+                    }}
+                    className="mt-2 px-4 py-2 bg-light-accent hover:bg-light-primary text-white text-sm font-semibold rounded-md shadow-md
+                               transform hover:scale-105 transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-light-primary focus:ring-opacity-75"
+                  >
+                    {copiedCode === cert.name ? 'Copied!' : 'Copy Verification Code'}
+                  </button>
+                  {copiedCode === cert.name && (
+                    <p className="text-green-500 text-xs mt-1 absolute left-1/2 -translate-x-1/2 animate-fade-in-up">Code copied!</p>
+                  )}
+                </div>
+              )}
             </div>
           ))}
         </div>
       </div>
-
-      {/* Image Modal */}
-      {selectedImage && (
-        <div
-          className={`fixed inset-0 bg-black bg-opacity-80 flex items-center justify-center z-50 p-4 transition-opacity duration-300
-                      ${isModalClosing ? 'opacity-0' : 'opacity-100'}`}
-          onClick={closeModal}
-        >
-          <div
-            className={`relative max-w-full max-h-[90vh] overflow-auto rounded-lg shadow-lg
-                        ${isModalClosing ? 'animate-scale-out' : 'animate-scale-in'}
-                        flex items-center justify-center`} // Added flex properties for centering content within the modal body
-            onClick={(e) => e.stopPropagation()}
-          >
-            <button
-              onClick={closeModal}
-              className="absolute top-3 right-3 text-white text-3xl p-2 rounded-full bg-gray-700/70 hover:bg-gray-800/90 z-10 transition-colors duration-200"
-              aria-label="Close image modal"
-            >
-              <FaTimes />
-            </button>
-            <img
-              src={selectedImage}
-              alt="Enlarged Certificate"
-              className="max-w-full max-h-full object-contain" // Use max-w-full and max-h-full
-            />
-          </div>
-        </div>
-      )}
     </section>
   );
 }

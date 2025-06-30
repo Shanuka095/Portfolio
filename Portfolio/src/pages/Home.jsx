@@ -10,7 +10,7 @@ import TypingEffect from '../components/TypingEffect'; // Import the new TypingE
 export default function Home() {
   const typingPhrases = [
     "Shanuka Induran",
-    "a Full Stack Developer." // Corrected the phrase here as well
+    "a Full Stack Developer."
   ];
 
   return (
@@ -62,9 +62,9 @@ export default function Home() {
       <div className="text-xl md:text-2xl lg:text-3xl max-w-3xl mx-auto leading-relaxed text-light-textSecondary dark:text-dark-textSecondary relative z-10 mt-2 h-16 sm:h-auto overflow-hidden">
         <TypingEffect
           phrases={typingPhrases}
-          typingSpeed={120} // Adjusted speed
-          deletingSpeed={60} // Adjusted speed
-          pauseTime={1800} // Adjusted pause time
+          typingSpeed={250} // Reduced typing speed (increased ms per character)
+          deletingSpeed={120} // Reduced deleting speed (increased ms per character)
+          pauseTime={1000} // Set pause time to 1 second
           className="inline-block font-mono"
         />
       </div>

@@ -1,7 +1,7 @@
 import React from 'react';
 import { FaCode, FaCogs, FaMobile, FaPencilRuler } from 'react-icons/fa';
 import Tilt from 'react-parallax-tilt';
-import ShanukaCover2 from '../assets/ShanukaCover2.png'; // Import ShanukaCover2
+import ShanukaCover2 from '../assets/ShanukaCover2.png';
 
 const servicesList = [
   {

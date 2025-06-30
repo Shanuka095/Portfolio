@@ -9,6 +9,7 @@ html {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-rendering: optimizeLegibility;
+  cursor: url('/path/to/your/custom-cursor.png'), auto; /* Consider adding a custom cursor image if you have one */
 }
 
 /* Custom text selection colors */
@@ -28,6 +29,7 @@ body {
   background-size: 200% 200%;
   animation: gradient-move 30s ease infinite alternate;
   background-attachment: fixed;
+  cursor: default; /* Default system cursor */
 }
 
 /* Dark mode styles, applied when 'dark' class is present on html */
@@ -164,4 +166,9 @@ html.dark .profile-border-animated {
   overflow: hidden; /* Hide overflowing text */
   white-space: nowrap; /* Prevent text from wrapping */
   /* Animation properties controlled by JS changing parent's width */
+}
+
+/* Custom cursor for interactive elements */
+a, button, .cursor-pointer {
+  cursor: pointer;
 }

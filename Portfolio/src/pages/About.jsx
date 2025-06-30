@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { FaLaptopCode, FaReact, FaDatabase, FaTools, FaMobileAlt, FaDraftingCompass } from 'react-icons/fa';
 import ShanukaCover1 from '../assets/ShanukaCover1.png';
 import ShanukaProfile2 from '../assets/ShanukaProfile2.png';
-import ShanukaCover2 from '../assets/ShanukaCover2.png';
+import ShanukaCover2 from '../assets/ShanukaCover2.png'; // Corrected import path from .2.png to .png
 
 // Import certificate images
 import FrontEndCert from '../assets/FrontEnd.png';
@@ -198,9 +198,9 @@ export default function About() {
                       e.stopPropagation(); // Prevent opening link when copying
                       copyToClipboard(cert.verificationCode, cert.name);
                     }}
-                    className="mt-2 px-4 py-2 bg-light-primary hover:bg-light-accent text-white text-sm font-semibold rounded-md shadow-md
+                    className="mt-2 px-4 py-2 bg-light-accent hover:bg-light-primary text-white text-sm font-semibold rounded-md shadow-md
                                transform hover:scale-105 transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-light-primary focus:ring-opacity-75
-                               dark:bg-dark-primary dark:hover:bg-dark-accent dark:text-dark-background" // Updated classes here
+                               dark:bg-dark-accent dark:hover:bg-dark-primary dark:text-dark-background"
                   >
                     {copiedCode === cert.name ? 'Copied!' : 'Copy Verification Code'}
                   </button>
@@ -214,9 +214,9 @@ export default function About() {
                     href={cert.verificationLink}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="mt-2 px-4 py-2 bg-light-primary hover:bg-light-accent text-white text-sm font-semibold rounded-md shadow-md
+                    className="mt-2 px-4 py-2 bg-light-accent hover:bg-light-primary text-white text-sm font-semibold rounded-md shadow-md
                                transform hover:scale-105 transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-light-primary focus:ring-opacity-75 relative z-10
-                               dark:bg-dark-primary dark:hover:bg-dark-accent dark:text-dark-background"
+                               dark:bg-dark-accent dark:hover:bg-dark-primary dark:text-dark-background"
                  >
                     Verify Certificate
                  </a>

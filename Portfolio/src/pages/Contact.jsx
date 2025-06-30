@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { FaEnvelope, FaPhoneAlt, FaLinkedin, FaGithub, FaFacebook, FaInstagram } from 'react-icons/fa';
-import ShanukaCover3 from '../assets/ShanukaCover3.png'; // Import ShanukaCover3
+import ShanukaCover3 from '../assets/ShanukaCover3.png';
 
 export default function Contact() {
   const [submissionStatus, setSubmissionStatus] = useState(null);

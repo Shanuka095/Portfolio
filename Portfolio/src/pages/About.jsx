@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { FaLaptopCode, FaReact, FaDatabase, FaTools, FaMobileAlt, FaDraftingCompass } from 'react-icons/fa';
 import ShanukaCover1 from '../assets/ShanukaCover1.png';
 import ShanukaProfile2 from '../assets/ShanukaProfile2.png';
-import ShanukaCover2 from '../assets/ShanukaCover2.png'; // Corrected import path from .2.png to .png
+import ShanukaCover2 from '../assets/ShanukaCover2.png'; // Corrected import path to .png
 
 // Import certificate images
 import FrontEndCert from '../assets/FrontEnd.png';
@@ -131,9 +131,9 @@ export default function About() {
           {skillCategories.map((category, catIdx) => (
             <div
               key={catIdx}
-              className="p-5 rounded-lg bg-light-background dark:bg-dark-background border border-light-border dark:border-dark-border shadow-md flex flex-col items-center text-center
+              className="p-5 rounded-lg bg-light-card dark:bg-dark-card border border-light-border dark:border-dark-border shadow-md flex flex-col items-center text-center
                          group relative overflow-hidden transform transition-all duration-300
-                         hover:scale-[1.02] hover:shadow-lg hover:animate-lift-and-glow dark:hover:animate-lift-and-glow-dark"
+                         hover:scale-[1.02] hover:shadow-lg hover:animate-lift-and-glow dark:hover:animate-lift-and-glow-dark" // Changed bg to bg-light-card/dark-card
               data-aos="zoom-in"
               data-aos-delay={700 + (catIdx * 100)}
             >
@@ -166,9 +166,9 @@ export default function About() {
           {certifications.map((cert, certIdx) => (
             <div
               key={certIdx}
-              className="p-5 rounded-lg bg-light-background dark:bg-dark-background border border-light-border dark:border-dark-border shadow-md flex flex-col items-center text-center
+              className="p-5 rounded-lg bg-light-card dark:bg-dark-card border border-light-border dark:border-dark-border shadow-md flex flex-col items-center text-center
                          group relative overflow-hidden transform transition-all duration-300
-                         hover:scale-[1.02] hover:shadow-lg hover:animate-lift-and-glow dark:hover:animate-lift-and-glow-dark"
+                         hover:scale-[1.02] hover:shadow-lg hover:animate-lift-and-glow dark:hover:animate-lift-and-glow-dark" // Changed bg to bg-light-card/dark-card
               data-aos="zoom-in"
               data-aos-delay={1100 + (certIdx * 100)}
             >
@@ -200,7 +200,7 @@ export default function About() {
                     }}
                     className="mt-2 px-4 py-2 bg-light-accent hover:bg-light-primary text-white text-sm font-semibold rounded-md shadow-md
                                transform hover:scale-105 transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-light-primary focus:ring-opacity-75
-                               dark:bg-dark-accent dark:hover:bg-dark-primary dark:text-dark-background"
+                               dark:bg-dark-accent dark:hover:bg-dark-primary dark:text-dark-background" // Swapped colors
                   >
                     {copiedCode === cert.name ? 'Copied!' : 'Copy Verification Code'}
                   </button>
@@ -216,7 +216,7 @@ export default function About() {
                     rel="noopener noreferrer"
                     className="mt-2 px-4 py-2 bg-light-accent hover:bg-light-primary text-white text-sm font-semibold rounded-md shadow-md
                                transform hover:scale-105 transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-light-primary focus:ring-opacity-75 relative z-10
-                               dark:bg-dark-accent dark:hover:bg-dark-primary dark:text-dark-background"
+                               dark:bg-dark-accent dark:hover:bg-dark-primary dark:text-dark-background" // Swapped colors
                  >
                     Verify Certificate
                  </a>

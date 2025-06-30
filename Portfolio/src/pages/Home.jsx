@@ -10,7 +10,7 @@ import TypingEffect from '../components/TypingEffect'; // Import the new TypingE
 export default function Home() {
   const typingPhrases = [
     "Shanuka Induran",
-    "a FullStack Developer."
+    "a Full Stack Developer." // Corrected the phrase here as well
   ];
 
   return (
@@ -50,7 +50,7 @@ export default function Home() {
 
       {/* Changed H1 text */}
       <h1
-        className="text-5xl md:text-6xl lg:text-7xl font-extrabold mb-4 leading-tight text-light-text dark:text-dark-text text-shadow-lg relative z-10"
+        className="text-6xl md:text-7xl lg:text-8xl font-extrabold mb-4 leading-tight text-light-text dark:text-dark-text text-shadow-lg relative z-10"
         data-aos="fade-up"
         data-aos-duration="1200"
         data-aos-delay="300"
@@ -62,10 +62,10 @@ export default function Home() {
       <div className="text-xl md:text-2xl lg:text-3xl max-w-3xl mx-auto leading-relaxed text-light-textSecondary dark:text-dark-textSecondary relative z-10 mt-2 h-16 sm:h-auto overflow-hidden">
         <TypingEffect
           phrases={typingPhrases}
-          typingSpeed={70}
-          deletingSpeed={30}
-          pauseTime={1500}
-          className="inline-block"
+          typingSpeed={120} // Adjusted speed
+          deletingSpeed={60} // Adjusted speed
+          pauseTime={1800} // Adjusted pause time
+          className="inline-block font-mono"
         />
       </div>
 

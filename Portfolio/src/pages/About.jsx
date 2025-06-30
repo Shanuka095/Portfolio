@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
-import { FaLaptopCode, FaReact, FaDatabase, FaTools, FaMobileAlt, FaDraftingCompass } from 'react-icons/fa'; // Removed FaTimes
+import { FaLaptopCode, FaReact, FaDatabase, FaTools, FaMobileAlt, FaDraftingCompass } from 'react-icons/fa';
 import ShanukaCover1 from '../assets/ShanukaCover1.png';
 import ShanukaProfile2 from '../assets/ShanukaProfile2.png';
+import ShanukaCover2 from '../assets/ShanukaCover2.png'; // Import ShanukaCover2 for skill cards background
 
 // Import certificate images
 import FrontEndCert from '../assets/FrontEnd.png';
@@ -64,8 +65,8 @@ const certifications = [
     name: "Introduction to MERN Stack",
     issuer: "Simplilearn SkillUp",
     image: MERNCert,
-    description: "Fullstack web development basics using MongoDB, Express.js, React.js, and Node.js."
-    // No verification code/link as per instruction, will be handled by conditional rendering
+    description: "Fullstack web development basics using MongoDB, Express.js, React.js, and Node.js.",
+    verificationLink: "https://www.simplilearn.com/skillup-certificate-landing?token=eyJjb3Vyc2VfaWQiOiIzMzM3IiwiY2VydGlmaWNhdGVfdXJsIjoiaHR0cHM6XC9cL2NlcnRpZmljYXRlcy5zaW1wbGljZG4ubmV0XC9zaGFyZVwvODQ5ODgwNV84ODY2MTUzMTc1MDUzNjEwNTU1OC5wbmciLCJ1c2VybmFtZSI6IlNoYW51a2EgSW5kdXJhbiJ9&utm_source=shared-certificate&utm_medium=lms&utm_campaign=shared-ce%20rtificate-promotion&referrer=https%3A%2F%2Flms.simplilearn.com%2Fcourses%2F6129%2FIntroduction-to-MERN-Stack%2Fcertificate%2Fdownload-skillup&%24web_only=true&_branch_match_id=1283813841183267946&_branch_referrer=H4sIAAAAAAAAA8soKSkottLXL87MLcjJ1EssKNDLyczL1k%2FVDwhPzzIsj7LMC02yrytKTUstKsrMS49PKsovL04tsvUBqkpN8cwDAMI2kTNBAAAAA"
   },
   {
     name: "Front-End Web Development",
@@ -131,13 +132,20 @@ export default function About() {
             <div
               key={catIdx}
               className="p-5 rounded-lg bg-light-background dark:bg-dark-background border border-light-border dark:border-dark-border shadow-md flex flex-col items-center text-center
-                         transform hover:scale-[1.02] hover:shadow-lg transition-all duration-300"
+                         group relative overflow-hidden transform transition-all duration-300
+                         hover:scale-[1.02] hover:shadow-lg hover:animate-lift-and-glow dark:hover:animate-lift-and-glow-dark" // Added group and hover animations
               data-aos="zoom-in"
               data-aos-delay={700 + (catIdx * 100)}
             >
-              <category.icon className="text-light-primary dark:text-dark-primary text-5xl mb-4" />
-              <h4 className="font-semibold text-light-primary dark:text-dark-primary mb-3 text-xl">{category.title}</h4>
-              <div className="flex flex-wrap justify-center gap-2">
+              {/* ShanukaCover2 as a subtle background image on hover */}
+              <img
+                src={ShanukaCover2}
+                alt="Digital watermark"
+                className="absolute inset-0 w-full h-full object-cover opacity-0 transition-opacity duration-300 group-hover:opacity-[0.05] md:group-hover:opacity-[0.1] lg:group-hover:opacity-[0.15] pointer-events-none"
+              />
+              <category.icon className="text-light-primary dark:text-dark-primary text-5xl mb-4 relative z-10" /> {/* Added relative z-10 */}
+              <h4 className="font-semibold text-light-primary dark:text-dark-primary mb-3 text-xl relative z-10">{category.title}</h4> {/* Added relative z-10 */}
+              <div className="flex flex-wrap justify-center gap-2 relative z-10"> {/* Added relative z-10 */}
                 {category.skills.map((skill, skillIdx) => (
                   <span
                     key={skillIdx}
@@ -196,9 +204,21 @@ export default function About() {
                     {copiedCode === cert.name ? 'Copied!' : 'Copy Verification Code'}
                   </button>
                   {copiedCode === cert.name && (
-                    <p className="text-green-500 text-xs mt-1 absolute left-1/2 -translate-x-1/2 animate-fade-in-up">Code copied!</p>
+                    <p className="text-green-500 text-xs mt-1 absolute left-1/2 -translate-x-1/2 animate-fade-in-up whitespace-nowrap">Code copied!</p>
                   )}
                 </div>
+              )}
+              {/* Conditional rendering for "Verify Certificate" button for MERN Stack */}
+              {cert.verificationLink && !cert.verificationCode && (
+                 <a
+                    href={cert.verificationLink}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="mt-2 px-4 py-2 bg-light-primary hover:bg-light-accent text-white text-sm font-semibold rounded-md shadow-md
+                               transform hover:scale-105 transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-light-primary focus:ring-opacity-75 relative z-10"
+                 >
+                    Verify Certificate
+                 </a>
               )}
             </div>
           ))}

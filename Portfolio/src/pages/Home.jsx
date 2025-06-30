@@ -25,7 +25,7 @@ export default function Home() {
       <img
         src={homeCoverBackground}
         alt="Home Background Texture"
-        className="absolute inset-0 w-full h-full object-cover opacity-[0.03] md:opacity-[0.05] pointer-events-none -z-20"
+        className="absolute inset-0 w-full h-full object-cover opacity-[0.03] md:opacity-[0.05] pointer-events-none -z-20 animate-background-subtle-float"
       />
 
       {/* Subtle background blob/gradient animation */}
@@ -44,13 +44,13 @@ export default function Home() {
         alt="Shanuka Induran"
         className="mx-auto rounded-full w-48 h-48 object-cover mb-8 shadow-xl border-4 border-light-primary dark:border-dark-primary
                    transition-colors duration-500 transform hover:scale-105 relative z-10
-                   animated-profile-photo profile-border-animated"
+                   animated-profile-photo profile-border-animated animate-profile-pulse" // Added animate-profile-pulse
       />
 
       {/* Changed H1 text */}
       <h1
         className="text-5xl md:text-6xl lg:text-7xl font-extrabold mb-4 leading-tight text-light-text dark:text-dark-text text-shadow-lg relative z-10"
-        data-aos="fade-up" // Kept AOS for initial appearance of "Hello. I'm"
+        data-aos="fade-up"
         data-aos-duration="1200"
         data-aos-delay="300"
       >
@@ -64,7 +64,7 @@ export default function Home() {
           typingSpeed={70}
           deletingSpeed={30}
           pauseTime={1500}
-          className="inline-block" // Apply monospace font via global css .typing-container
+          className="inline-block"
         />
       </div>
 

@@ -8,7 +8,7 @@ export default {
   theme: {
     extend: {
       fontFamily: {
-        sans: ['Jost', 'sans-serif'], // Changed font from Inter to Jost
+        sans: ['Jost', 'sans-serif'],
         mono: ['Roboto Mono', 'monospace'],
       },
       colors: {
@@ -140,7 +140,7 @@ export default {
           '0%, 100%': { transform: 'scale(1)', opacity: '1' },
           '50%': { transform: 'scale(1.03)', opacity: '0.9' },
         },
-        // New: Super professional background image animation for Home page
+        // Super professional background image animation for Home page
         'background-subtle-float': {
           '0%, 100%': {
             transform: 'translateY(0px) scale(1) rotate(12deg)',
@@ -156,6 +156,36 @@ export default {
             transform: 'translateY(5px) scale(0.99) rotate(14deg)',
             filter: 'brightness(0.95) blur(1.2px)',
             opacity: '0.04'
+          },
+        },
+        // Pop up for modal
+        'scale-in': {
+          '0%': { transform: 'scale(0.5)', opacity: '0' },
+          '100%': { transform: 'scale(1)', opacity: '1' },
+        },
+        'scale-out': {
+          '0%': { transform: 'scale(1)', opacity: '1' },
+          '100%': { transform: 'scale(0.5)', opacity: '0' },
+        },
+        // New: Lift and subtle glow for cards on hover
+        'lift-and-glow': {
+          '0%, 100%': {
+            transform: 'translateY(0) scale(1)',
+            'box-shadow': '0 4px 10px rgba(0, 0, 0, 0.1)',
+          },
+          '50%': {
+            transform: 'translateY(-5px) scale(1.01)',
+            'box-shadow': '0 8px 20px rgba(0, 0, 0, 0.2), 0 0 15px rgba(0, 123, 255, 0.4)',
+          },
+        },
+        'lift-and-glow-dark': {
+          '0%, 100%': {
+            transform: 'translateY(0) scale(1)',
+            'box-shadow': '0 4px 10px rgba(0, 0, 0, 0.3)',
+          },
+          '50%': {
+            transform: 'translateY(-5px) scale(1.01)',
+            'box-shadow': '0 8px 20px rgba(0, 0, 0, 0.5), 0 0 15px rgba(88, 166, 255, 0.4)',
           },
         },
       },
@@ -174,7 +204,7 @@ export default {
         'border-pulse-dark': 'border-pulse-dark 4s ease-in-out infinite alternate',
         'slide-in-top': 'slide-in-top 0.4s ease-out forwards',
         'slide-out-top': 'slide-out-top 0.4s ease-out forwards',
-        'float': 'float 3s ease-in-out infinite', // Renamed from 'background-subtle-float' for ShanukaProfile1.png
+        'float': 'float 3s ease-in-out infinite',
         'card-bg-scale': 'card-bg-scale 0.3s ease-out forwards',
         'rotate-once': 'rotate-once 0.5s ease-out',
         'text-soft-glow': 'text-soft-glow 3s ease-in-out infinite alternate',
@@ -184,6 +214,10 @@ export default {
         'blink-caret': 'blink-caret 0.75s step-end infinite',
         'navbar-name-pulse': 'navbar-name-pulse 2s ease-in-out infinite alternate',
         'background-subtle-float': 'background-subtle-float 15s ease-in-out infinite alternate',
+        'scale-in': 'scale-in 0.3s ease-out forwards',
+        'scale-out': 'scale-out 0.3s ease-out forwards',
+        'lift-and-glow': 'lift-and-glow 3s ease-in-out infinite alternate',
+        'lift-and-glow-dark': 'lift-and-glow-dark 3s ease-in-out infinite alternate',
       }
     },
   },

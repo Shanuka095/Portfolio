@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { FaLaptopCode, FaReact, FaDatabase, FaTools, FaMobileAlt, FaDraftingCompass } from 'react-icons/fa';
 import ShanukaCover1 from '../assets/ShanukaCover1.png';
 import ShanukaProfile2 from '../assets/ShanukaProfile2.png';
-import ShanukaCover2 from '../assets/ShanukaCover2.png'; // Import ShanukaCover2 for skill cards background
+import ShanukaCover2 from '../assets/ShanukaCover2.png';
 
 // Import certificate images
 import FrontEndCert from '../assets/FrontEnd.png';
@@ -133,7 +133,7 @@ export default function About() {
               key={catIdx}
               className="p-5 rounded-lg bg-light-background dark:bg-dark-background border border-light-border dark:border-dark-border shadow-md flex flex-col items-center text-center
                          group relative overflow-hidden transform transition-all duration-300
-                         hover:scale-[1.02] hover:shadow-lg hover:animate-lift-and-glow dark:hover:animate-lift-and-glow-dark" // Added group and hover animations
+                         hover:scale-[1.02] hover:shadow-lg hover:animate-lift-and-glow dark:hover:animate-lift-and-glow-dark"
               data-aos="zoom-in"
               data-aos-delay={700 + (catIdx * 100)}
             >
@@ -143,9 +143,9 @@ export default function About() {
                 alt="Digital watermark"
                 className="absolute inset-0 w-full h-full object-cover opacity-0 transition-opacity duration-300 group-hover:opacity-[0.05] md:group-hover:opacity-[0.1] lg:group-hover:opacity-[0.15] pointer-events-none"
               />
-              <category.icon className="text-light-primary dark:text-dark-primary text-5xl mb-4 relative z-10" /> {/* Added relative z-10 */}
-              <h4 className="font-semibold text-light-primary dark:text-dark-primary mb-3 text-xl relative z-10">{category.title}</h4> {/* Added relative z-10 */}
-              <div className="flex flex-wrap justify-center gap-2 relative z-10"> {/* Added relative z-10 */}
+              <category.icon className="text-light-primary dark:text-dark-primary text-5xl mb-4 relative z-10" />
+              <h4 className="font-semibold text-light-primary dark:text-dark-primary mb-3 text-xl relative z-10">{category.title}</h4>
+              <div className="flex flex-wrap justify-center gap-2 relative z-10">
                 {category.skills.map((skill, skillIdx) => (
                   <span
                     key={skillIdx}
@@ -198,8 +198,9 @@ export default function About() {
                       e.stopPropagation(); // Prevent opening link when copying
                       copyToClipboard(cert.verificationCode, cert.name);
                     }}
-                    className="mt-2 px-4 py-2 bg-light-accent hover:bg-light-primary text-white text-sm font-semibold rounded-md shadow-md
-                               transform hover:scale-105 transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-light-primary focus:ring-opacity-75"
+                    className="mt-2 px-4 py-2 bg-light-primary hover:bg-light-accent text-white text-sm font-semibold rounded-md shadow-md
+                               transform hover:scale-105 transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-light-primary focus:ring-opacity-75
+                               dark:bg-dark-primary dark:hover:bg-dark-accent dark:text-dark-background" // Updated classes here
                   >
                     {copiedCode === cert.name ? 'Copied!' : 'Copy Verification Code'}
                   </button>
@@ -208,14 +209,14 @@ export default function About() {
                   )}
                 </div>
               )}
-              {/* Conditional rendering for "Verify Certificate" button for MERN Stack */}
-              {cert.verificationLink && !cert.verificationCode && (
+              {cert.verificationLink && !cert.verificationCode && ( // For MERN Stack certificate
                  <a
                     href={cert.verificationLink}
                     target="_blank"
                     rel="noopener noreferrer"
                     className="mt-2 px-4 py-2 bg-light-primary hover:bg-light-accent text-white text-sm font-semibold rounded-md shadow-md
-                               transform hover:scale-105 transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-light-primary focus:ring-opacity-75 relative z-10"
+                               transform hover:scale-105 transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-light-primary focus:ring-opacity-75 relative z-10
+                               dark:bg-dark-primary dark:hover:bg-dark-accent dark:text-dark-background"
                  >
                     Verify Certificate
                  </a>

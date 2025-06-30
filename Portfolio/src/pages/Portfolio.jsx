@@ -109,7 +109,7 @@ export default function Portfolio() {
                       className="inline-flex items-center px-4 py-2 bg-light-accent hover:bg-light-primary text-white rounded-lg text-sm font-medium transition-colors duration-200 shadow-md hover:shadow-lg transform hover:scale-105"
                     >
                       Live Demo
-                      <svg className="ml-2 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M10 6H6a2 2 0 00-2 2v10a2 0 002 2h10a2 0 002-2v-4m-4-4l5-5m0 0h-7m7 0v7"></path></svg>
+                      <svg className="ml-2 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4m-4-4l5-5m0 0h-7m7 0v7"></path></svg>
                     </a>
                   )}
                   {project.githubLink && (

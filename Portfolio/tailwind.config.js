@@ -167,7 +167,7 @@ export default {
           '0%': { transform: 'scale(1)', opacity: '1' },
           '100%': { transform: 'scale(0.5)', opacity: '0' },
         },
-        // New: Lift and subtle glow for cards on hover
+        // Lift and subtle glow for cards on hover
         'lift-and-glow': {
           '0%, 100%': {
             transform: 'translateY(0) scale(1)',
@@ -187,6 +187,16 @@ export default {
             transform: 'translateY(-5px) scale(1.01)',
             'box-shadow': '0 8px 20px rgba(0, 0, 0, 0.5), 0 0 15px rgba(88, 166, 255, 0.4)',
           },
+        },
+        // New: Profile breathing animation
+        'profile-breathe': {
+          '0%, 100%': { transform: 'scale(1) rotate(0deg)' },
+          '50%': { transform: 'scale(1.01) rotate(1deg)' },
+        },
+        // New: Profile hover scale and pulse
+        'profile-hover-scale-pulse': {
+          '0%, 100%': { transform: 'scale(1.05)' },
+          '50%': { transform: 'scale(1.1)' },
         },
       },
       animation: {
@@ -218,6 +228,8 @@ export default {
         'scale-out': 'scale-out 0.3s ease-out forwards',
         'lift-and-glow': 'lift-and-glow 3s ease-in-out infinite alternate',
         'lift-and-glow-dark': 'lift-and-glow-dark 3s ease-in-out infinite alternate',
+        'profile-breathe': 'profile-breathe 4s ease-in-out infinite alternate', // Applied to ShanukaProfile.png
+        'profile-hover-scale-pulse': 'profile-hover-scale-pulse 1.5s ease-in-out infinite alternate', // Applied on hover
       }
     },
   },
